@@ -1,8 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pokédex - Lista de Pokémon</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/pokeball.svg">
+  <link rel="icon" type="image/png" href="assets/pokeball.png">
+  <!-- favicon.ico vive en la raiz: el navegador lo pide solo, sin <link> -->
+
+  <!-- Hoja de estilos del sitio. Mismo elemento <link> que el favicon;
+       lo que cambia es rel, que dice qué relación tiene el archivo con el documento. -->
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
 <!-- TEAM POKÉMON (ALE) -->
 
 <!-- FAVORITOS (JAFFET) -->
+ <main>
+    
+    <section id="PokemonFavoritos"> 
+        
+        <button id="Favorito" command="show-modal" commandfor="dialogoFav"> 
+            Favorito 
+        </button>
+        <dialog id="dialogoFav">
+            <h2>Favoritos</h2>
+            <section id="listaPokesFavInterna">
+                <h3>N Pokemon marcados como favoritos</h3>
+                <ul>
+                    <li>
+                        <img src="assets/bulbasaur.png" alt="Bulbasaur" width="96" height="96">
+                        <span>#001</span>
+                        <span>Bulbasaur</span>
+                        <button>Ver detalle</button>
+                        <button>Quitar Favorito</button>
+                    </li>
+                    <li>
+                        <img src="assets/ivysaur.png" alt="Ivysour" width="96" height="96">
+                        <span>#002</span>
+                        <span>Ivisour</span>
+                        <button>Ver detalle</button>
+                        <button>Quitar Favorito</button>
+                    </li>
+                    <li>
+                        <img src="assets/charizard.png" alt="Charizard" width="96" height="96">
+                        <span>#006</span>
+                        <span>Charizard</span>
+                        <button>Ver detalle</button>
+                        <button>Quitar Favorito</button>
+                    </li>
+                    <li>
+                        <img src="assets/squirtle.png" alt="Squirtle" width="96" height="96">
+                        <span>#007</span>
+                        <span>Squirtle</span>
+                        <button>Ver detalle</button>
+                        <button>Quitar Favorito</button>
+                    </li>
+                </ul>
+            </section>
+            <button id="agregarCapturado" type="button">Agregar desde Capturados</button>
+            <button id="cerrarFav" command="close" commandfor="dialogoFav">Cerrar</button>
+        </dialog>
+            
 
+    </section>
+
+</main>
 <!-- ESTADÍSTICAS (SEBAS) -->
 
 <!-- CAPTURADOS (FELI) -->
-
+</html>
