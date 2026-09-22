@@ -165,6 +165,116 @@
         </section>
 
     <!-- ESTADÍSTICAS (SEBAS) -->
+    <section id="PokemonEstadisticas">
+        <button id="mostrarEstadisticas" type="button" command="show-modal" commandfor="dialogoEstadisticas">
+            Mostrar estadísticas
+        </button>
+
+        <dialog id="dialogoEstadisticas" aria-labelledby="tituloEstadisticas">
+            <h2 id="tituloEstadisticas">Estadísticas</h2>
+
+            <table>
+                <caption>Comparativa de  los Pokémon de tu equipo</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Pokémon</th>
+                        <th scope="col">PS</th>
+                        <th scope="col">ATQ</th>
+                        <th scope="col">DEF</th>
+                        <th scope="col">AT.ESP</th>
+                        <th scope="col">DEF.ESP</th>
+                        <th scope="col">VEL</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">
+                            <img src="assets/bulbasaur.png" alt="Imagen de Bulbasaur" width="32" height="32">
+                            Bulbasaur
+                        </th>
+                        <td>45</td>
+                        <td>49</td>
+                        <td>49</td>
+                        <td>65</td>
+                        <td>65</td>
+                        <td>45</td>
+                        <td>318</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <img src="assets/ivysaur.png" alt="Imagen de Ivysaur" width="32" height="32">
+                            Ivysaur
+                        </th>
+                        <td>60</td>
+                        <td>62</td>
+                        <td>63</td>
+                        <td>80</td>
+                        <td>80</td>
+                        <td>60</td>
+                        <td>405</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <img src="assets/venusaur.png" alt="Imagen de Venusaur" width="32" height="32">
+                            Venusaur
+                        </th>
+                        <td>80</td>
+                        <td>82</td>
+                        <td>83</td>
+                        <td>100</td>
+                        <td>100</td>
+                        <td>80</td>
+                        <td>525</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <img src="assets/charmander.png" alt="Imagen de Charmander" width="32" height="32">
+                            Charmander
+                        </th>
+                        <td>39</td>
+                        <td>52</td>
+                        <td>43</td>
+                        <td>60</td>
+                        <td>50</td>
+                        <td>65</td>
+                        <td>309</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <img src="assets/charmeleon.png" alt="Imagen de Charmeleon" width="32" height="32">
+                            Charmeleon
+                        </th>
+                        <td>58</td>
+                        <td>64</td>
+                        <td>58</td>
+                        <td>80</td>
+                        <td>65</td>
+                        <td>80</td>
+                        <td>405</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th scope="row">Promedio del equipo</th>
+                        <td>56.4</td>
+                        <td>61.8</td>
+                        <td>59.2</td>
+                        <td>77</td>
+                        <td>72</td>
+                        <td>66</td>
+                        <td>392.4</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <p>Valores base tomados de la Pokédex - la fila de totales resume el equipo completo.</p>
+
+            <button type="button" command="close" commandfor="dialogoEstadisticas">
+                Cerrar
+            </button>
+        </dialog>
+    </section>
     
     <!-- CAPTURADOS (FELI) -->
 	<button type="button" command="show-modal" commandfor="ver-capturados">
