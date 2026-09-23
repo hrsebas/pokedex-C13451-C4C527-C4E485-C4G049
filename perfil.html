@@ -35,10 +35,56 @@
         </nav>
     </header>
     <main> 
+        <!-- Detalles del perfil-->
         <section>
             <hr>
             <h2>#0001 Red</h2>
-            <button>Editar perfil</button>
+            <!-- Para actualizar el perfil-->
+            <p><button type="button" command="show-modal" commandfor="editar-perfil">
+                    Editar perfil
+            </button></p>
+
+            <dialog id="editar-perfil">
+            <form method="dialog">
+                <h2>Editar perfil</h2>
+
+                <h3>Datos personales</h3>
+
+                <p>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre">
+                </p>
+
+                <p>
+                    <label for="edad">Edad:</label>
+                    <input type="number" id="edad" name="edad">
+                </p>
+
+                <p>
+                    <label for="ciudad">Ciudad:</label>
+                    <input type="text" id="ciudad" name="ciudad">
+                </p>
+
+                <p>
+                    <label for="estatura">Estatura (cm):</label>
+                    <input type="number" id="estatura" name="estatura">
+                </p>
+
+                <p>
+                    <label for="biografia">Biografía:</label>
+                    <input id="biografia" name="biografia"></input>
+                </p>
+
+                <p>
+                    <button type="button" command="close" commandfor="editar-perfil">Cancelar</button>
+                    <button type="button" command="close" commandfor="editar-perfil">Guardar</button>
+                </p>
+            </form>
+            </dialog>
+
+
+            <!-- Muestra los detalles del perfil-->
+            
             <p>Edad: 11 años</p>
             <p>Ciudad origen: Pueblo Paleta</p>
             <p>Estatura: 1.50cm</p>
