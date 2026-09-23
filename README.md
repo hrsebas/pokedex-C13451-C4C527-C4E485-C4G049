@@ -1,38 +1,49 @@
-# Pokédex — CI-0137
+# Pokédex - Laboratorio 01
 
-Proyecto de referencia del curso **Desarrollo de Aplicaciones Web**, Escuela de
-Ciencias de la Computación e Informática, Universidad de Costa Rica.
+Laboratorio 01 del curso **CI-0137 Desarrollo de Aplicaciones Web**,
+Escuela de Ciencias de la Computación e Informática, Universidad de Costa Rica.
+Profesora: Lic. Mariana Núñez Arguedas.
 
-Este repositorio se va actualizando clase a clase. Y su objetivo es que, en caso
-de que se quedan botados en algún punto o quieran comparar su código con el que
-desarrollamos durante la clase, puedan acceder al mismo de forma sencilla.
+## Integrantes
+
+| Nombre                       | Carné  |
+| ---------------------------- | ------ |
+| Alejandro Guerra Rodríguez   | C13451 |
+| Felipe Corrales Barrientos   | C4E485 |
+| Jafet Araya Góngora          | C4C527 |
+| Sebastián Herrera Rivera     | C4G049 |
+
+## Sitio publicado
+
+<https://hrsebas.github.io/pokedex-C13451-C4C527-C4E485-C4G049/perfil.html>
+
+## Pantallas realizadas
+
+- [x] Perfil de entrenador (wireframe 03)
+- [x] Team Pokémon (wireframe 04)
+- [x] Favoritos (wireframe 05)
+- [x] Estadísticas (wireframe 06)
+- [x] Pokémon capturados *(extra, wireframe 07)*
+- [x] Editar entrenador *(extra, sin wireframe)*
+
+## Puntos extra realizados
+
+- [x] **Diálogo de Pokémon capturados**
+- [x] **Formulario para editar el entrenador**
 
 ## Qué hay acá
 
 ```
-index.html                             Lista de Pokémon: buscador, rejilla, paginación
-detalle-pokemon-{nombre-pokemon}.html  Ficha completa de un Pokémon
-assets/                                Imágenes: sprites, ilustraciones, logo, pokébolas
-design/                                Wireframes
+index.html                       Lista de Pokémon
+detalle-pokemon-squirtle.html    Ficha completa de un Pokémon
+perfil.html                      Perfil de entrenador con sus diálogos
+assets/                          Imágenes de los Pokémon, entrenador y favicon
+design/                          Wireframes
 ```
 
-La rejilla muestra **diez** Pokémon: la línea de Bulbasaur, la de Charmander,
-la de Squirtle y Pikachu. Pero solo existe **una** página de detalle, la de
-Squirtle. Las tarjetas de los demás ya tienen su enlace escrito y sus imágenes
-en `assets/`, pero esos archivos todavía no existen: si hacés clic te va a dar
-error 404, y está bien. Construir esas fichas es parte de los ejercicios.
+## Créditos
 
-## Sobre las imágenes y los datos
-
-Las ilustraciones y sprites vienen del repositorio público
-[PokeAPI/sprites](https://github.com/PokeAPI/sprites), el mismo proyecto cuya
-API vamos a consumir más adelante en el curso. Las imágenes `nombre.png` son
-los sprites clásicos de 96×96; las `nombre-grande.png` son la ilustración
-oficial de 475×475.
-
-Los datos (tipos, pesos, tamaños, habilidades y estadísticas base) están
-tomados de [Pokémon Database](https://pokemondb.net/).
-
-Pokémon y sus personajes son marcas registradas de Nintendo, Game Freak y The
-Pokémon Company. Este proyecto no tiene ninguna relación con ellos y se usa
-únicamente con fines educativos, sin fines de lucro.
+- [mariannuar/ci0137-pokedex-2026](https://github.com/mariannuar/ci0137-pokedex-2026): repositorio base del curso, usado como punto de partida para este laboratorio.
+- [PokéAPI](https://pokeapi.co/): estadísticas base, altura, peso, tipos y habilidades.
+- [PokeAPI/sprites](https://github.com/PokeAPI/sprites): ilustraciones oficiales.
+- [WikiDex](https://www.wikidex.net/): nombres en español de habilidades y tipos.
