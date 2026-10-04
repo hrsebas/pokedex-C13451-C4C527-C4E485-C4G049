@@ -196,14 +196,14 @@
         </button>
 
         <dialog id="dialogoFav" class="modal">
-            <header class="modal__encabezado">
+            <div class="modal__encabezado">
             <span class="tarjeta-seccion__icono"></span>
             <h2 class="modal__titulo">Favoritos</h2>
             <button type="button" class="boton boton--claro boton--circulo boton--cerrar"
                     command="close" commandfor="dialogoFav">
                 <span class="solo-lectores">Cerrar</span>
             </button>
-            </header>
+        </div>
 
             <div class="modal__contenido">
             <p>4 Pokémon marcados como favoritos</p>
@@ -243,11 +243,11 @@
             </ul>
             </div>
 
-            <footer class="modal__pie">
-            <button type="button" class="boton boton--borde-azul">Agregar desde capturados</button>
+            <div class="modal__pie">
+            <button type="button" class="boton boton--primario">Agregar desde capturados</button>
             <button type="button" class="boton boton--claro"    
                     command="close" commandfor="dialogoFav">Cerrar</button>
-            </footer>
+            </div>
         </dialog>
     </article>
 

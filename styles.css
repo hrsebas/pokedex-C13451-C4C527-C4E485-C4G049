@@ -1095,9 +1095,9 @@ footer a {
   mask: var(--icono) center / contain no-repeat;
 }
 
-.dato--lugar::before {mask-image: url("assets/icono-lugar.svg");}
-.dato--estatura::before {mask-image: url("assets/icono-estatura.svg");}
-.dato--edad::before {mask-image: url("assets/icono-edad.svg");}
+.dato--lugar { --icono: url("assets/icono-ciudad.png"); }
+.dato--estatura { --icono: url("assets/icono-estatura.png");}
+.dato--edad { --icono: url("assets/icono-fecha.png"); }
 
 /* Las tarjetas de sección del perfil (equipo, capturados, favoritos y
    estadísticas) son flexibles: el icono y el número se alinean a la izquierda,
@@ -1107,11 +1107,10 @@ footer a {
   display: grid;
   place-items: center;
   flex-shrink: 0;
-  width: 4rem;
-  height: 4rem;
+  width: 2.75rem;
+  height: 2.75rem;
   border-radius: 1rem;
   background: var(--color-icono);
-
 }
 .tarjeta-seccion__icono::before {
   content: "";
@@ -1138,6 +1137,7 @@ footer a {
 
 .modal__encabezado,
 .modal__pie {
+  display: flex;
   align-items: center;
   gap: 0.75rem;
   padding: 1.25rem 1.5rem;
@@ -1145,7 +1145,8 @@ footer a {
 
 .modal__titulo { flex: 1; margin: 0; }
 .modal__contenido { padding: 0 1.5rem; }
-.modal__pie { justify-content: flex-end; }
+.modal__encabezado { border-bottom: 1px solid var(--pista); }
+.modal__pie        { justify-content: flex-end; border-top: 1px solid var(--pista); }
 
 .modal__lista {
   display: grid;
@@ -1156,11 +1157,13 @@ footer a {
 
 .modal__fila {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.75rem;
   padding: 0.75rem;
-  background: var(--crema);
+  background: #fff;
   border-radius: var(--radio);
+  box-shadow: 0 6px 14px -6px rgba(20, 44, 82, 0.35);
 }
 
 .modal__texto { flex: 1; margin: 0; font-weight: 700; }
@@ -1180,10 +1183,6 @@ footer a {
   width: 1.25rem;
   height: 1.25rem;
   background: url("assets/icono-estrellafav.png") center / contain no-repeat;
-}
-.modal__fila {
-  background: #fff;
-  box-shadow: 0 6px 14px -6px rgba(20, 44, 82, 0.35);
 }
 
 /* Botón redondo con ícono (flecha) */
@@ -1207,3 +1206,14 @@ footer a {
 .tarjeta-seccion--capturados  { --color-icono: var(--rojo);     --icono: url("assets/pokeball.png"); }
 .tarjeta-seccion--favoritos   { --color-icono: var(--amarillo); --icono: url("assets/icono-estrella.png");}
 .tarjeta-seccion--estadisticas { --color-icono: var(--verde);   --icono: url("assets/icono-stats.png"); }
+
+.secciones {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+@media (width >= 40rem) {
+  .secciones { grid-template-columns: repeat(2, 1fr); }
+}
