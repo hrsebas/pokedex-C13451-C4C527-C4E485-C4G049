@@ -106,66 +106,6 @@
 
         </section>
 
-    <dialog id="ver-equipo">
-        <h3>Team Pokémon</h3>
-        <p>5 de 6 espacios ocupados</p>
-        
-        <ul>
-            <li>
-                <section>
-                    <img class="pokemon-card__image" src="assets/bulbasaur.png" alt="Bulbasaur" width="96" height="96">
-                    <p>#001</p>
-                    <p>Bulbasaur</p>
-                    <p><button type="button" command="show-modal" >Quitar</button></p>
-            
-                </section>
-            </li>
-            <li>
-                <section>
-                    <img class="pokemon-card__image" src="assets/ivysaur.png" alt="Ivysaur" width="96" height="96">
-                    <p>#002</p>
-                    <p>Ivysaur</p>
-                    <p><button type="button" command="show-modal" >Quitar</button></p>
-            
-                </section>
-            </li>
-            <li>
-                <section>
-                    <img class="pokemon-card__image" src="assets/venusaur.png" alt="Venusaur" width="96" height="96">
-                    <p>#003</p>
-                    <p>Venusaur</p>
-                    <p><button type="button" command="show-modal" >Quitar</button></p>
-            
-                </section>
-            </li>
-            <li>
-                <section>
-                    <img class="pokemon-card__image" src="assets/charmander.png" alt="Charmander" width="96" height="96">
-                    <p>#004</p>
-                    <p>Charmander</p>
-                    <p><button type="button" command="show-modal" >Quitar</button></p>
-                </section>
-            </li>
-            <li>
-                <section>
-                    <img class="pokemon-card__image" src="assets/charmeleon.png" alt="Charmaleon" width="96" height="96">
-                    <p>#005</p>
-                    <p>Charmeleon</p>
-                    <p><button type="button" command="show-modal" >Quitar</button></p>
-                </section>
-            </li>
-            <li>
-                <section>
-                    <p>Espacio libre</p>
-                </section>
-            </li>
-        </ul>
-        
-        
-        <button type="button" command="close" commandfor="ver-equipo">Cerrar</button>
-        <button type="button" command="close" commandfor="ver-equipo">Agregar desde capturados</button>
-    </dialog>
-
     <!-- EQUIPO POKEMON ALE -->
     <article class="tarjeta-seccion tarjeta-seccion--equipo">
         <span class="tarjeta-seccion__icono"></span>
@@ -180,9 +120,78 @@
             <span class="solo-lectores">Ver equipo</span>
         </button>
 
-        
-    </article>
+        <dialog id="ver-equipo" class="modal">
+            <div class="modal__encabezado">
+                <span class="tarjeta-seccion__icono"></span>
+                <h2 class="modal__titulo">Team Pokémon</h2>
+                <button type="button" class="boton boton--claro boton--circulo boton--cerrar"
+                        command="close" commandfor="ver-equipo">
+                    <span class="solo-lectores">Cerrar</span>
+                </button>
+            </div>
 
+            <div class="modal__contenido">
+                <p>5 de 6 espacios ocupados</p>
+            </div>
+            
+            <ul>
+                <li>
+                    <section>
+                        <img class="pokemon-card__image" src="assets/bulbasaur.png" alt="Bulbasaur" width="96" height="96">
+                        <p>#001</p>
+                        <p>Bulbasaur</p>
+                        <p><button type="button" command="show-modal" >Quitar</button></p>
+                
+                    </section>
+                </li>
+                <li>
+                    <section>
+                        <img class="pokemon-card__image" src="assets/ivysaur.png" alt="Ivysaur" width="96" height="96">
+                        <p>#002</p>
+                        <p>Ivysaur</p>
+                        <p><button type="button" command="show-modal" >Quitar</button></p>
+                
+                    </section>
+                </li>
+                <li>
+                    <section>
+                        <img class="pokemon-card__image" src="assets/venusaur.png" alt="Venusaur" width="96" height="96">
+                        <p>#003</p>
+                        <p>Venusaur</p>
+                        <p><button type="button" command="show-modal" >Quitar</button></p>
+                
+                    </section>
+                </li>
+                <li>
+                    <section>
+                        <img class="pokemon-card__image" src="assets/charmander.png" alt="Charmander" width="96" height="96">
+                        <p>#004</p>
+                        <p>Charmander</p>
+                        <p><button type="button" command="show-modal" >Quitar</button></p>
+                    </section>
+                </li>
+                <li>
+                    <section>
+                        <img class="pokemon-card__image" src="assets/charmeleon.png" alt="Charmaleon" width="96" height="96">
+                        <p>#005</p>
+                        <p>Charmeleon</p>
+                        <p><button type="button" command="show-modal" >Quitar</button></p>
+                    </section>
+                </li>
+                <li>
+                    <section>
+                        <p>Espacio libre</p>
+                    </section>
+                </li>
+            </ul>
+            
+            
+            <div class="modal__pie">
+                <button type="button" class="boton boton--primario">Agregar desde capturados</button>
+                <button type="button" class="boton boton--claro" command="close" commandfor="ver-equipo">Cerrar</button>
+            </div>
+        </dialog>
+    </article>
 
     <!-- FAVORITOS JAFFET -->
     <article class="tarjeta-seccion tarjeta-seccion--favoritos">
