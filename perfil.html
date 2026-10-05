@@ -15,8 +15,6 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
-
-
 <body>
     <header>
         <p>
@@ -34,6 +32,30 @@
         </ul>
         </nav>
     </header>
+
+   <section class="perfil">
+    <img class="perfil__avatar" src="assets/imagen-trainer.png"
+        alt="Foto de perfil del entrenador" width="144" height="144">
+
+    <div class="perfil__info">
+        <h2>
+        <span class="perfil__insignia">#0001</span> Red
+        </h2>
+
+        <ul class="perfil__datos">
+        <li class="dato dato--edad"><span class="solo-lectores">Edad:</span> 20 años</li>
+        <li class="dato dato--lugar"><span class="solo-lectores">Ciudad:</span> Pueblo Desampa</li>
+        <li class="dato dato--estatura"><span class="solo-lectores">Estatura:</span> 1.70 m</li>
+        </ul>
+
+        <p>Entrenador de Pueblo Desampa que soñó…</p>
+    </div>
+
+    <button type="button" class="boton boton--rojo"
+            command="show-modal" commandfor="editar-perfil">
+        Editar perfil
+    </button>
+    </section>  
     <main> 
         <!-- Detalles del perfil-->
         <section>
@@ -81,14 +103,9 @@
                 </p>
             </form>
             </dialog>
+
         </section>
 
-
-    <p><button type="button" command="show-modal" commandfor="ver-equipo">
-        Team Pokémon
-    </button></p>
-
-    
     <dialog id="ver-equipo">
         <h3>Team Pokémon</h3>
         <p>5 de 6 espacios ocupados</p>
@@ -148,56 +165,94 @@
         <button type="button" command="close" commandfor="ver-equipo">Cerrar</button>
         <button type="button" command="close" commandfor="ver-equipo">Agregar desde capturados</button>
     </dialog>
-    
-    
-    <!-- FAVORITOS (JAFFET) -->
+
+    <!-- EQUIPO POKEMON ALE -->
+    <article class="tarjeta-seccion tarjeta-seccion--equipo">
+        <span class="tarjeta-seccion__icono"></span>
+
+        <div class="tarjeta-seccion__texto">
+            <h2 class="tarjeta-seccion__titulo">Equipo Pokémon</h2>
+            <p class="tarjeta-seccion__subtitulo">5 de 6 espacios ocupados</p>
+        </div>
+
+        <button type="button" class="boton boton--claro boton--circulo boton--flecha"
+                command="show-modal" commandfor="ver-equipo">
+            <span class="solo-lectores">Ver equipo</span>
+        </button>
+
         
-        <section id="PokemonFavoritos"> 
-            
-            <button  command="show-modal" commandfor="dialogoFav"> 
-                Favorito 
+    </article>
+
+
+    <!-- FAVORITOS JAFFET -->
+    <article class="tarjeta-seccion tarjeta-seccion--favoritos">
+        <span class="tarjeta-seccion__icono"></span>
+
+        <div class="tarjeta-seccion__texto">
+            <h2 class="tarjeta-seccion__titulo">Favoritos</h2>
+            <p class="tarjeta-seccion__subtitulo">4 Pokémon marcados</p>
+        </div>
+
+        <button type="button" class="boton boton--claro boton--circulo boton--flecha"
+                command="show-modal" commandfor="dialogoFav">
+            <span class="solo-lectores">Ver favoritos</span>
+        </button>
+
+        <dialog id="dialogoFav" class="modal">
+            <div class="modal__encabezado">
+            <span class="tarjeta-seccion__icono"></span>
+            <h2 class="modal__titulo">Favoritos</h2>
+            <button type="button" class="boton boton--claro boton--circulo boton--cerrar"
+                    command="close" commandfor="dialogoFav">
+                <span class="solo-lectores">Cerrar</span>
             </button>
-            <dialog id="dialogoFav">
-                <h2>Favoritos</h2>
-                <section id="listaPokesFavInterna">
-                    <h3>N Pokemon marcados como favoritos</h3>
-                    <ul>
-                        <li>
-                            <img src="assets/bulbasaur.png" alt="Bulbasaur" width="96" height="96">
-                            <span>#001</span>
-                            <span>Bulbasaur</span>
-                            <button>Ver detalle</button>
-                            <button>Quitar Favorito</button>
-                        </li>
-                        <li>
-                            <img src="assets/ivysaur.png" alt="Ivysour" width="96" height="96">
-                            <span>#002</span>
-                            <span>Ivisour</span>
-                            <button>Ver detalle</button>
-                            <button>Quitar Favorito</button>
-                        </li>
-                        <li>
-                            <img src="assets/charizard.png" alt="Charizard" width="96" height="96">
-                            <span>#006</span>
-                            <span>Charizard</span>
-                            <button>Ver detalle</button>
-                            <button>Quitar Favorito</button>
-                        </li>
-                        <li>
-                            <img src="assets/squirtle.png" alt="Squirtle" width="96" height="96">
-                            <span>#007</span>
-                            <span>Squirtle</span>
-                            <button>Ver detalle</button>
-                            <button>Quitar Favorito</button>
-                        </li>
-                    </ul>
-                </section>
-                <button id="agregarCapturado" type="button">Agregar desde Capturados</button>
-                <button id="cerrarFav" command="close" commandfor="dialogoFav">Cerrar</button>
-            </dialog>
-            
-            
-        </section>
+        </div>
+
+            <div class="modal__contenido">
+            <p>4 Pokémon marcados como favoritos</p>
+
+            <ul class="modal__lista">
+                <li class="modal__fila">
+                    <span class="modal__estrella"></span>
+                    <img src="assets/bulbasaur.png" alt="" width="64" height="64">
+                    <p class="modal__texto">#001 Bulbasaur</p>
+                    <button type="button" class="boton boton--claro boton--chico">Ver detalle</button>
+                    <button type="button" class="boton boton--borde-rojo boton--chico">Quitar favorito</button>
+                </li>
+
+                <li class="modal__fila">
+                    <span class="modal__estrella"></span>
+                    <img src="assets/ivysaur.png" alt="" width="64" height="64">
+                    <p class="modal__texto">#002 Ivysaur</p>
+                <button type="button" class="boton boton--claro boton--chico">Ver detalle</button>
+                <button type="button" class="boton boton--borde-rojo boton--chico">Quitar favorito</button>
+                </li>
+
+                <li class="modal__fila">
+                    <span class="modal__estrella"></span>
+                    <img src="assets/charizard.png" alt="" width="64" height="64">
+                    <p class="modal__texto">#006 Charizard</p>
+                    <button type="button" class="boton boton--claro boton--chico">Ver detalle</button>
+                    <button type="button" class="boton boton--borde-rojo boton--chico">Quitar favorito</button>
+                </li>
+
+                <li class="modal__fila">
+                    <span class="modal__estrella"></span>
+                    <img src="assets/squirtle.png" alt="" width="64" height="64">
+                    <p class="modal__texto">#007 Squirtle</p>
+                    <button type="button" class="boton boton--claro boton--chico">Ver detalle</button>
+                    <button type="button" class="boton boton--borde-rojo boton--chico">Quitar favorito</button>
+                </li>
+            </ul>
+            </div>
+
+            <div class="modal__pie">
+            <button type="button" class="boton boton--primario">Agregar desde capturados</button>
+            <button type="button" class="boton boton--claro"    
+                    command="close" commandfor="dialogoFav">Cerrar</button>
+            </div>
+        </dialog>
+    </article>
 
     <!-- ESTADÍSTICAS (SEBAS) -->
     <section id="PokemonEstadisticas">
