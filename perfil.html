@@ -115,12 +115,21 @@
         </section>
 
 
-    <p><button type="button" command="show-modal" commandfor="ver-equipo">
-        Team Pokémon
-    </button></p>
+    <!-- EQUIPO POKÉMON -->
+    <article class="tarjeta-seccion tarjeta-seccion--equipo">
+        <span class="tarjeta-seccion__icono"></span>
 
-    
-    <dialog id="ver-equipo">
+        <div class="tarjeta-seccion__texto">
+            <h2 class="tarjeta-seccion__titulo">Equipo Pokémon</h2>
+            <p class="tarjeta-seccion__subtitulo">5 de 6 espacios ocupados</p>
+        </div>
+
+        <button type="button" class="boton boton--claro boton--circulo boton--flecha"
+                command="show-modal" commandfor="ver-equipo">
+            <span class="solo-lectores">Ver equipo Pokémon</span>
+        </button>
+
+        <dialog id="ver-equipo">
         <h3>Team Pokémon</h3>
         <p>5 de 6 espacios ocupados</p>
         
@@ -179,6 +188,7 @@
         <button type="button" command="close" commandfor="ver-equipo">Cerrar</button>
         <button type="button" command="close" commandfor="ver-equipo">Agregar desde capturados</button>
     </dialog>
+    </article>
     
 
     <!-- FAVORITOS JAFFET -->
@@ -252,9 +262,17 @@
     </article>
 
     <!-- ESTADÍSTICAS (SEBAS) -->
-    <section id="PokemonEstadisticas">
-        <button id="mostrarEstadisticas" type="button" command="show-modal" commandfor="dialogoEstadisticas">
-            Mostrar estadísticas
+    <article class="tarjeta-seccion tarjeta-seccion--estadisticas">
+        <span class="tarjeta-seccion__icono"></span>
+
+        <div class="tarjeta-seccion__texto">
+            <h2 class="tarjeta-seccion__titulo">Estadísticas</h2>
+            <p class="tarjeta-seccion__subtitulo">Promedios del equipo</p>
+        </div>
+
+        <button type="button" class="boton boton--claro boton--circulo boton--flecha"
+                command="show-modal" commandfor="dialogoEstadisticas">
+            <span class="solo-lectores">Ver estadísticas</span>
         </button>
 
         <dialog id="dialogoEstadisticas" aria-labelledby="tituloEstadisticas">
@@ -361,12 +379,21 @@
                 Cerrar
             </button>
         </dialog>
-    </section>
+    </article>
     
     <!-- CAPTURADOS (FELI) -->
-	<button type="button" command="show-modal" commandfor="ver-capturados">
-		Ver capturados
-	</button>
+    <article class="tarjeta-seccion tarjeta-seccion--capturados">
+        <span class="tarjeta-seccion__icono"></span>
+
+        <div class="tarjeta-seccion__texto">
+            <h2 class="tarjeta-seccion__titulo">Pokémon Capturados</h2>
+            <p class="tarjeta-seccion__subtitulo">10 capturados</p>
+        </div>
+
+        <button type="button" class="boton boton--claro boton--circulo boton--flecha"
+                command="show-modal" commandfor="ver-capturados">
+            <span class="solo-lectores">Ver Pokémon capturados</span>
+        </button>
 
 	<dialog id="ver-capturados">
 		<h2>Pokémones capturados</h2>
@@ -504,6 +531,7 @@
 		<button type="button">Agregar al equipo</button>
 		<button type="button" command="close" commandfor="ver-capturados">Salir</button>
 	</dialog>
+    </article>
         
     </main>
     <footer>
