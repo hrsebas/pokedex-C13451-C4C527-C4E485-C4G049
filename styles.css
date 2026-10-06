@@ -268,12 +268,6 @@ header p { margin: 0; }
   gap: 1rem 1.5rem;
 }
 
-.encabezado{
-  display: flex;
-  flex-direction: space-between;
-  align-items: center;
-}
-
 .contador {
   background: var(--amarillo);
   color: var(--navy);
