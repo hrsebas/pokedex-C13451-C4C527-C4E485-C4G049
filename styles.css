@@ -1202,7 +1202,7 @@ footer a {
 .boton--flecha {--icono: url("assets/icono-flecha.png"); }
 .boton--cerrar { --icono: url("assets/icono-esc.png"); }
 
-.tarjeta-seccion--equipo      { --color-icono: var(--azul);     --icono: url("assets/icono-equipo.png"); }
+.tarjeta-seccion--equipo      { --color-icono: var(--azul);     --icono: url("assets/icono-equipo.svg"); }
 .tarjeta-seccion--capturados  { --color-icono: var(--rojo);     --icono: url("assets/pokeball.png"); }
 .tarjeta-seccion--favoritos   { --color-icono: var(--amarillo); --icono: url("assets/icono-estrella.png");}
 .tarjeta-seccion--estadisticas { --color-icono: var(--verde);   --icono: url("assets/icono-stats.png"); }
@@ -1212,6 +1212,15 @@ footer a {
   grid-template-columns: 1fr;
   gap: 1.5rem;
   margin-top: 1.5rem;
+}
+
+/* Malla de 3 columnas para la disposición del equipo Pokémon */
+.equipo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    list-style: none;
+    padding: 0;
 }
 
 @media (width >= 40rem) {
