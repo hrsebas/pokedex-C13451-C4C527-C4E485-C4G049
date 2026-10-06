@@ -1226,3 +1226,22 @@ footer a {
 @media (width >= 40rem) {
   .secciones { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* --------------------------------------------------------------------------
+   14. Animación nueva de botones (perfil)
+
+   Animación distinta a las de la sección 12 y a los hovers actuales: en vez
+   del "saltito" (translateY) que ya usan .logo y .boton, estos botones hacen
+   un giro con zoom (scale + rotate). Combina transform con transition nombrada
+   (transition: transform 0.2s ease, nunca con el valor all), dura 0.2s y
+   responde igual a :hover que a :focus-visible (teclado).
+   -------------------------------------------------------------------------- */
+
+.tarjeta-seccion .boton--circulo {
+  transition: transform 0.2s ease;
+}
+
+.tarjeta-seccion .boton--circulo:hover,
+.tarjeta-seccion .boton--circulo:focus-visible {
+  transform: scale(1.15) rotate(-8deg);
+}
