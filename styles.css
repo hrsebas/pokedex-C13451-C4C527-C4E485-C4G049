@@ -1132,6 +1132,17 @@ footer a {
 .tarjeta-seccion__titulo,
 .tarjeta-seccion__subtitulo { margin: 0; }
 
+/* Hover y foco con teclado en la flecha. La tarjeta sube y crece su sombra */
+.tarjeta-seccion {
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+
+.tarjeta-seccion:hover,
+.tarjeta-seccion:has(.boton--flecha:focus-visible) {
+  transform: translateY(-3px);
+  box-shadow: var(--sombra-3);
+}
+
 .modal {
   width: min(60rem, 92vw);
   padding: 0;
@@ -1215,7 +1226,7 @@ footer a {
 .tarjeta-seccion--equipo      { --color-icono: var(--azul);     --icono: url("assets/icono-equipo.png"); }
 .tarjeta-seccion--capturados  { --color-icono: var(--rojo);     --icono: url("assets/pokeball.png"); }
 .tarjeta-seccion--favoritos   { --color-icono: var(--amarillo); --icono: url("assets/icono-estrella.png");}
-.tarjeta-seccion--estadisticas { --color-icono: var(--verde);   --icono: url("assets/icono-stats.png"); }
+.tarjeta-seccion--estadisticas { --color-icono: var(--verde);   --icono: url("assets/icono-stats.svg"); }
 
 .secciones {
   display: grid;
@@ -1271,4 +1282,102 @@ footer a {
 .tarjeta-seccion .boton--circulo:hover,
 .tarjeta-seccion .boton--circulo:focus-visible {
   transform: scale(1.15) rotate(-8deg);
+}
+
+/* --------------------------------------------------------------------------
+   15. Estadísticas
+   -------------------------------------------------------------------------- */
+
+.modal--estadisticas {
+  width: min(61rem, 92vw);
+  background: var(--sprite-fondo);
+}
+
+.stats-table--equipo {
+  margin: 1rem 0;
+  border-radius: var(--radio);
+  box-shadow: var(--sombra-1);
+}
+
+/* El redondeo de las esquinas del encabezado de la tabla */
+.stats-table--equipo thead th:first-child {
+  border-top-left-radius: var(--radio);
+}
+
+.stats-table--equipo thead th:last-child {
+  border-top-right-radius: var(--radio);
+}
+
+.stats-table--equipo caption {
+  padding: 0 0 1rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  background: none;
+}
+
+/* Sin barritas, necesitan style="--valor" y el lab no permite estilos en línea */
+.stats-table--equipo tbody td::after {
+  content: none;
+}
+
+.stats-table--equipo th,
+.stats-table--equipo td {
+  text-align: left;
+}
+
+.stats-table--equipo td {
+  font-family: var(--fuente-texto);
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
+.stats-table--equipo tbody tr:nth-child(even) {
+  background: var(--blanco);
+}
+
+.stats-table--equipo tbody th {
+  font-family: var(--fuente-titulo);
+  white-space: nowrap;
+}
+
+.stats-table--equipo tbody th img {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+/* Negrita para el valor más alto. Lleva dos clases porque con una sola
+   perdería contra ".stats-table--equipo td", que pone las celdas en peso normal */
+.stats-table--equipo .stats-table__max {
+  font-weight: 700;
+}
+
+.stats-table--equipo th:last-child,
+.stats-table--equipo td:last-child {
+  text-align: right;
+}
+
+.stats-table__pastilla {
+  display: inline-block;
+  min-width: 2.75rem;
+  padding: 0.2rem 0.6rem;
+  font-family: var(--fuente-titulo);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--sprite-fondo);
+  background: var(--navy);
+  border-radius: var(--radio-pastilla);
+}
+
+.stats-table--equipo .stats-table__total th,
+.stats-table--equipo .stats-table__total td {
+  font-family: var(--fuente-titulo);
+  font-size: 1rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.modal__nota {
+  font-size: 0.85rem;
+  color: var(--tinta-suave);
 }
