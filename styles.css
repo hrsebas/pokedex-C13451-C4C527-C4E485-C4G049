@@ -1110,6 +1110,7 @@ footer a {
   height: 2.75rem;
   border-radius: 1rem;
   background: var(--color-icono);
+  box-shadow: 0 6px 14px -4px var(--color-icono);
 }
 .tarjeta-seccion__icono::before {
   content: "";
