@@ -1045,6 +1045,15 @@ footer a {
   box-shadow: 0 18px 34px -14px rgba(20, 44, 82, 0.55);
 }
 
+/* La tarjeta principal del perfil vive fuera de <main>, así que no hereda su
+   contenedor: se le dan el mismo ancho máximo centrado y unos márgenes
+   laterales para que no toque los bordes de la pantalla. */
+.perfil {
+  max-width: 75rem;
+  width: calc(100% - 2rem);
+  margin: 1.5rem auto 0;
+}
+
 .perfil__info {
   flex: 1;
 }
