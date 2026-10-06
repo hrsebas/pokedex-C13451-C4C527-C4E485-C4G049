@@ -195,116 +195,134 @@
     </article>
 
     <!-- ESTADÍSTICAS (SEBAS) -->
-    <section id="PokemonEstadisticas">
-        <button id="mostrarEstadisticas" type="button" command="show-modal" commandfor="dialogoEstadisticas">
-            Mostrar estadísticas
+    <article class="tarjeta-seccion tarjeta-seccion--estadisticas">
+        <span class="tarjeta-seccion__icono"></span>
+
+        <div class="tarjeta-seccion__texto">
+            <h2 class="tarjeta-seccion__titulo">Estadísticas</h2>
+            <p class="tarjeta-seccion__subtitulo">Comparativa de tu equipo</p>
+        </div>
+
+        <button type="button" class="boton boton--claro boton--circulo boton--flecha"
+                command="show-modal" commandfor="dialogoEstadisticas">
+            <span class="solo-lectores">Ver estadísticas</span>
         </button>
 
-        <dialog id="dialogoEstadisticas" aria-labelledby="tituloEstadisticas">
-            <h2 id="tituloEstadisticas">Estadísticas</h2>
+        <dialog id="dialogoEstadisticas" class="modal modal--estadisticas" aria-labelledby="tituloEstadisticas">
+            <div class="modal__encabezado">
+                <span class="tarjeta-seccion__icono"></span>
+                <h2 class="modal__titulo" id="tituloEstadisticas">Estadísticas</h2>
+                <button type="button" class="boton boton--claro boton--circulo boton--cerrar"
+                        command="close" commandfor="dialogoEstadisticas">
+                    <span class="solo-lectores">Cerrar</span>
+                </button>
+            </div>
 
-            <table>
-                <caption>Comparativa de  los Pokémon de tu equipo</caption>
-                <thead>
-                    <tr>
-                        <th scope="col">Pokémon</th>
-                        <th scope="col">PS</th>
-                        <th scope="col">ATQ</th>
-                        <th scope="col">DEF</th>
-                        <th scope="col">AT.ESP</th>
-                        <th scope="col">DEF.ESP</th>
-                        <th scope="col">VEL</th>
-                        <th scope="col">Total</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">
-                            <img src="assets/bulbasaur.png" alt="Imagen de Bulbasaur" width="32" height="32">
-                            Bulbasaur
-                        </th>
-                        <td>45</td>
-                        <td>49</td>
-                        <td>49</td>
-                        <td>65</td>
-                        <td>65</td>
-                        <td>45</td>
-                        <td>318</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            <img src="assets/ivysaur.png" alt="Imagen de Ivysaur" width="32" height="32">
-                            Ivysaur
-                        </th>
-                        <td>60</td>
-                        <td>62</td>
-                        <td>63</td>
-                        <td>80</td>
-                        <td>80</td>
-                        <td>60</td>
-                        <td>405</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            <img src="assets/venusaur.png" alt="Imagen de Venusaur" width="32" height="32">
-                            Venusaur
-                        </th>
-                        <td>80</td>
-                        <td>82</td>
-                        <td>83</td>
-                        <td>100</td>
-                        <td>100</td>
-                        <td>80</td>
-                        <td>525</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            <img src="assets/charmander.png" alt="Imagen de Charmander" width="32" height="32">
-                            Charmander
-                        </th>
-                        <td>39</td>
-                        <td>52</td>
-                        <td>43</td>
-                        <td>60</td>
-                        <td>50</td>
-                        <td>65</td>
-                        <td>309</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            <img src="assets/charmeleon.png" alt="Imagen de Charmeleon" width="32" height="32">
-                            Charmeleon
-                        </th>
-                        <td>58</td>
-                        <td>64</td>
-                        <td>58</td>
-                        <td>80</td>
-                        <td>65</td>
-                        <td>80</td>
-                        <td>405</td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <th scope="row">Promedio del equipo</th>
-                        <td>56.4</td>
-                        <td>61.8</td>
-                        <td>59.2</td>
-                        <td>77</td>
-                        <td>72</td>
-                        <td>66</td>
-                        <td>392.4</td>
-                    </tr>
-                </tfoot>
-            </table>
+            <div class="modal__contenido">
+                <table class="stats-table stats-table--equipo">
+                    <caption>Comparativa de los Pokémon de tu equipo</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Pokémon</th>
+                            <th scope="col">PS</th>
+                            <th scope="col">ATQ</th>
+                            <th scope="col">DEF</th>
+                            <th scope="col">AT.ESP</th>
+                            <th scope="col">DEF.ESP</th>
+                            <th scope="col">VEL</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                <img src="assets/bulbasaur.png" alt="" width="32" height="32">
+                                Bulbasaur
+                            </th>
+                            <td>45</td>
+                            <td>49</td>
+                            <td>49</td>
+                            <td>65</td>
+                            <td>65</td>
+                            <td>45</td>
+                            <td><span class="stats-table__pastilla">318</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <img src="assets/ivysaur.png" alt="" width="32" height="32">
+                                Ivysaur
+                            </th>
+                            <td>60</td>
+                            <td>62</td>
+                            <td>63</td>
+                            <td>80</td>
+                            <td>80</td>
+                            <td>60</td>
+                            <td><span class="stats-table__pastilla">405</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <img src="assets/venusaur.png" alt="" width="32" height="32">
+                                Venusaur
+                            </th>
+                            <td class="stats-table__max">80</td>
+                            <td class="stats-table__max">82</td>
+                            <td class="stats-table__max">83</td>
+                            <td class="stats-table__max">100</td>
+                            <td class="stats-table__max">100</td>
+                            <td class="stats-table__max">80</td>
+                            <td><span class="stats-table__pastilla">525</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <img src="assets/charmander.png" alt="" width="32" height="32">
+                                Charmander
+                            </th>
+                            <td>39</td>
+                            <td>52</td>
+                            <td>43</td>
+                            <td>60</td>
+                            <td>50</td>
+                            <td>65</td>
+                            <td><span class="stats-table__pastilla">309</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <img src="assets/charmeleon.png" alt="" width="32" height="32">
+                                Charmeleon
+                            </th>
+                            <td>58</td>
+                            <td>64</td>
+                            <td>58</td>
+                            <td>80</td>
+                            <td>65</td>
+                            <td class="stats-table__max">80</td>
+                            <td><span class="stats-table__pastilla">405</span></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="stats-table__total">
+                            <th scope="row">Promedio del equipo</th>
+                            <td>56.4</td>
+                            <td>61.8</td>
+                            <td>59.2</td>
+                            <td>77</td>
+                            <td>72</td>
+                            <td>66</td>
+                            <td>392.4</td>
+                        </tr>
+                    </tfoot>
+                </table>
 
-            <p>Valores base tomados de la Pokédex - la fila de totales resume el equipo completo.</p>
+                <p class="modal__nota">Valores base tomados de la Pokédex · la fila de totales resume el equipo completo.</p>
+            </div>
 
-            <button type="button" command="close" commandfor="dialogoEstadisticas">
-                Cerrar
-            </button>
+            <div class="modal__pie">
+                <button type="button" class="boton boton--primario"
+                        command="close" commandfor="dialogoEstadisticas">Cerrar</button>
+            </div>
         </dialog>
-    </section>
+    </article>
     
     <!-- CAPTURADOS (FELI) -->
 	<button type="button" command="show-modal" commandfor="ver-capturados">
