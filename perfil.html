@@ -104,82 +104,113 @@
             </form>
             </dialog>
 
-
-            <!-- Muestra los detalles del perfil-->
-            
-            <p>Edad: 11 años</p>
-            <p>Ciudad origen: Pueblo Paleta</p>
-            <p>Estatura: 1.50cm</p>
-            <p>Bio: Me gusta mucho coleccionar pokemones con mi novia de lol</p>
-            <hr>
         </section>
 
+    <!-- EQUIPO POKEMON ALE -->
+    <article class="tarjeta-seccion tarjeta-seccion--equipo">
+        <span class="tarjeta-seccion__icono"></span>
 
-    <p><button type="button" command="show-modal" commandfor="ver-equipo">
-        Team Pokémon
-    </button></p>
+        <div class="tarjeta-seccion__texto">
+            <h2 class="tarjeta-seccion__titulo">Equipo Pokémon</h2>
+            <p class="tarjeta-seccion__subtitulo">5 de 6 espacios ocupados</p>
+        </div>
 
-    
-    <dialog id="ver-equipo">
-        <h3>Team Pokémon</h3>
-        <p>5 de 6 espacios ocupados</p>
-        
-        <ul>
-            <li>
-                <section>
-                    <img class="pokemon-card__image" src="assets/bulbasaur.png" alt="Bulbasaur" width="96" height="96">
-                    <p>#001</p>
-                    <p>Bulbasaur</p>
-                    <p><button type="button" command="show-modal" >Quitar</button></p>
+        <button type="button" class="boton boton--claro boton--circulo boton--flecha"
+                command="show-modal" commandfor="ver-equipo">
+            <span class="solo-lectores">Ver equipo</span>
+        </button>
+
+        <dialog id="ver-equipo" class="modal">
+            <div class="modal__encabezado">
+                <span class="tarjeta-seccion__icono"></span>
+                <h2 class="modal__titulo">Team Pokémon</h2>
+                <button type="button" class="boton boton--claro boton--circulo boton--cerrar"
+                        command="close" commandfor="ver-equipo">
+                    <span class="solo-lectores">Cerrar</span>
+                </button>
+            </div>
+
+            <div class="modal__contenido">
+                <p>5 de 6 espacios ocupados</p>
+
+                <ul class="equipo-grid">
+                    <li class="pokemon-card">
+                        <section>
+                            <img class="pokemon-card__image" src="assets/bulbasaur.png" alt="Bulbasaur" width="96" height="96">
+                            <p class="pokemon-card__number">#001</p>
+                            <p class="pokemon-card__name">Bulbasaur</p>
+                            <p>
+                                <span class="tipo tipo--planta">Planta</span>
+                                <span class="tipo tipo--veneno">Veneno</span>
+                            </p>
+                            <p><button type="button" class="boton boton--borde-rojo boton--chico">- Quitar</button></p>
+
+                        </section>
+                    </li>
+                    <li class="pokemon-card">
+                        <section>
+                            <img class="pokemon-card__image" src="assets/ivysaur.png" alt="Ivysaur" width="96" height="96">
+                            <p class="pokemon-card__number">#002</p>
+                            <p class="pokemon-card__name">Ivysaur</p>
+                            <p>
+                                <span class="tipo tipo--planta">Planta</span>
+                                <span class="tipo tipo--veneno">Veneno</span>
+                            </p>
+                            <p><button type="button" class="boton boton--borde-rojo boton--chico">- Quitar</button></p>
+                    
+                        </section>
+                    </li>
+                    <li class="pokemon-card">
+                        <section>
+                            <img class="pokemon-card__image" src="assets/charmander.png" alt="Charmander" width="96" height="96">
+                            <p class="pokemon-card__number">#004</p>
+                            <p class="pokemon-card__name">Charmander</p>
+                            <p>
+                                <span class="tipo tipo--fuego">Fuego</span>
+                            </p>
+                            <p><button type="button" class="boton boton--borde-rojo boton--chico">- Quitar</button></p>
+                    
+                        </section>
+                    </li>
+                    <li class="pokemon-card">
+                        <section>
+                            <img class="pokemon-card__image" src="assets/squirtle.png" alt="Squirtle" width="96" height="96">
+                            <p class="pokemon-card__number">#007</p>
+                            <p class="pokemon-card__name">Squirtle</p>
+                            <p>
+                                <span class="tipo tipo--agua">Agua</span>
+                            </p>
+                            <p><button type="button" class="boton boton--borde-rojo boton--chico">- Quitar</button></p>
+                        </section>
+                    </li>
+                    <li class="pokemon-card">
+                        <section>
+                            <img class="pokemon-card__image" src="assets/pikachu.png" alt="Pikachu" width="96" height="96">
+                            <p class="pokemon-card__number">#025</p>
+                            <p class="pokemon-card__name">Pikachu</p>
+                            <p>
+                                <span class="tipo tipo--eléctrico">Eléctrico</span>
+                            </p>
+                            <p><button type="button" class="boton boton--borde-rojo boton--chico">- Quitar</button></p>
+                        </section>
+                    </li>
+                    <li class="pokemon-card equipo-card--libre">
+                        <section>
+                            <button type="button" class="boton boton--claro boton--circulo boton--suma">
+                                <span class="solo-lectores">Agregar pokemon</span>
+                            </button>
+                            <p class="pokemon-card__name">Espacio libre</p>
+                        </section>
+                    </li>
+                </ul>
+            </div>
             
-                </section>
-            </li>
-            <li>
-                <section>
-                    <img class="pokemon-card__image" src="assets/ivysaur.png" alt="Ivysaur" width="96" height="96">
-                    <p>#002</p>
-                    <p>Ivysaur</p>
-                    <p><button type="button" command="show-modal" >Quitar</button></p>
-            
-                </section>
-            </li>
-            <li>
-                <section>
-                    <img class="pokemon-card__image" src="assets/venusaur.png" alt="Venusaur" width="96" height="96">
-                    <p>#003</p>
-                    <p>Venusaur</p>
-                    <p><button type="button" command="show-modal" >Quitar</button></p>
-            
-                </section>
-            </li>
-            <li>
-                <section>
-                    <img class="pokemon-card__image" src="assets/charmander.png" alt="Charmander" width="96" height="96">
-                    <p>#004</p>
-                    <p>Charmander</p>
-                    <p><button type="button" command="show-modal" >Quitar</button></p>
-                </section>
-            </li>
-            <li>
-                <section>
-                    <img class="pokemon-card__image" src="assets/charmeleon.png" alt="Charmaleon" width="96" height="96">
-                    <p>#005</p>
-                    <p>Charmeleon</p>
-                    <p><button type="button" command="show-modal" >Quitar</button></p>
-                </section>
-            </li>
-            <li>
-                <section>
-                    <p>Espacio libre</p>
-                </section>
-            </li>
-        </ul>
-        
-        
-        <button type="button" command="close" commandfor="ver-equipo">Cerrar</button>
-        <button type="button" command="close" commandfor="ver-equipo">Agregar desde capturados</button>
-    </dialog>
-    
+            <div class="modal__pie">
+                <button type="button" class="boton boton--primario">Agregar desde capturados</button>
+                <button type="button" class="boton boton--claro" command="close" commandfor="ver-equipo">Cerrar</button>
+            </div>
+        </dialog>
+    </article>
 
     <!-- FAVORITOS JAFFET -->
     <article class="tarjeta-seccion tarjeta-seccion--favoritos">
@@ -212,33 +243,64 @@
                 <li class="modal__fila">
                     <span class="modal__estrella"></span>
                     <img src="assets/bulbasaur.png" alt="" width="64" height="64">
-                    <p class="modal__texto">#001 Bulbasaur</p>
-                    <button type="button" class="boton boton--claro boton--chico">Ver detalle</button>
-                    <button type="button" class="boton boton--borde-rojo boton--chico">Quitar favorito</button>
+                    <div class="modal__texto">
+                        <span>Bulbasaur</span>
+                        <span class="pokemon-card__number">#001</span>
+
+                        <div>
+                            <span class="tipo tipo--planta">Planta</span>
+                            <span class="tipo tipo--veneno">Veneno</span>
+                        </div>
+                    </div>
+                    <button type="button" class="boton boton--borde-azul boton--chico">Ver detalle</button>
+                    <button type="button" class="boton boton--borde-rojo boton--chico">Quitar de favoritos X</button>
                 </li>
 
                 <li class="modal__fila">
                     <span class="modal__estrella"></span>
                     <img src="assets/ivysaur.png" alt="" width="64" height="64">
-                    <p class="modal__texto">#002 Ivysaur</p>
-                <button type="button" class="boton boton--claro boton--chico">Ver detalle</button>
-                <button type="button" class="boton boton--borde-rojo boton--chico">Quitar favorito</button>
+                    <div class="modal__texto">
+                        <span>Ivysaur</span>
+                        <span class="pokemon-card__number">#002</span>
+
+                        <div>
+                            <span class="tipo tipo--planta">Planta</span>
+                            <span class="tipo tipo--veneno">Veneno</span>
+                        </div>
+                    </div>
+                    <button type="button" class="boton boton--borde-azul boton--chico">Ver detalle</button>
+                    <button type="button" class="boton boton--borde-rojo boton--chico">Quitar de favoritos X</button>
                 </li>
 
                 <li class="modal__fila">
                     <span class="modal__estrella"></span>
                     <img src="assets/charizard.png" alt="" width="64" height="64">
-                    <p class="modal__texto">#006 Charizard</p>
-                    <button type="button" class="boton boton--claro boton--chico">Ver detalle</button>
-                    <button type="button" class="boton boton--borde-rojo boton--chico">Quitar favorito</button>
+                    <div class="modal__texto">
+                        <span>Charizard</span>
+                        <span class="pokemon-card__number">#006</span>
+
+                        <div>
+                            <span class="tipo tipo--fuego">Fuego</span>
+                            <span class="tipo tipo--volador">Volador</span>
+                        </div>
+                    </div>
+                    <button type="button" class="boton boton--borde-azul boton--chico">Ver detalle</button>
+                    <button type="button" class="boton boton--borde-rojo boton--chico">Quitar de favoritos X</button>
                 </li>
 
                 <li class="modal__fila">
                     <span class="modal__estrella"></span>
                     <img src="assets/squirtle.png" alt="" width="64" height="64">
-                    <p class="modal__texto">#007 Squirtle</p>
-                    <button type="button" class="boton boton--claro boton--chico">Ver detalle</button>
-                    <button type="button" class="boton boton--borde-rojo boton--chico">Quitar favorito</button>
+                    <div class="modal__texto">
+                        <span>Squirtle</span>
+                        <span class="pokemon-card__number">#007</span>
+
+                        <div>
+                            <span class="tipo tipo--agua">Agua</span>
+                        </div>
+                    </div>
+                    <button type="button" class="boton boton--borde-azul boton--chico">Ver detalle</button>
+                    <button type="button" class="boton boton--borde-rojo boton--chico">Quitar de favoritos X</button>
                 </li>
             </ul>
             </div>
