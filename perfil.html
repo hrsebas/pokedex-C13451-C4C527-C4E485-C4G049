@@ -105,6 +105,8 @@
         </section>
 
 
+    <!-- Secciones del perfil: tarjetas en dos columnas -->
+    <div class="secciones">
     <!-- EQUIPO POKÉMON -->
     <article class="tarjeta-seccion tarjeta-seccion--equipo">
         <span class="tarjeta-seccion__icono"></span>
@@ -180,6 +182,158 @@
     </dialog>
     </article>
     
+
+    <!-- CAPTURADOS (FELI) -->
+    <article class="tarjeta-seccion tarjeta-seccion--capturados">
+        <span class="tarjeta-seccion__icono"></span>
+
+        <div class="tarjeta-seccion__texto">
+            <h2 class="tarjeta-seccion__titulo">Pokémon Capturados</h2>
+            <p class="tarjeta-seccion__subtitulo">10 capturados</p>
+        </div>
+
+        <button type="button" class="boton boton--claro boton--circulo boton--flecha"
+                command="show-modal" commandfor="ver-capturados">
+            <span class="solo-lectores">Ver Pokémon capturados</span>
+        </button>
+
+	<dialog id="ver-capturados">
+		<h2>Pokémones capturados</h2>
+		<hr>
+		<p>Seleccioná los que querés en tu equipo o marcalos como favoritos</p>
+		<search>
+			<form class="buscador" action="./" method="get">
+				<fieldset>
+					<legend>Criterios de búsqueda</legend>
+					<label for="nombre">Nombre</label>
+					<input type="search" id="nombre" name="nombre" placeholder="Busca por nombre">
+
+					<label for="tipo">Tipo</label>
+					<select id="tipo" name="tipo">
+						<option value="">Todos los tipos</option>
+						<option value="planta">Planta</option>
+						<option value="fuego">Fuego</option>
+						<option value="agua">Agua</option>
+						<option value="electrico">Eléctrico</option>
+						<option value="veneno">Veneno</option>
+						<option value="volador">Volador</option>
+					</select>
+
+					<button type="submit">Buscar</button>
+				</fieldset>
+			</form>
+		</search>
+		<section id="lista-pokemon">
+		<ul class="pokemon-list">
+            <li>
+                <img class="pokemon-card__image" src="assets/bulbasaur.png" alt="Bulbasaur" width="96" height="96">
+                <span class="pokemon-card__number">#001</span>
+                <span class="pokemon-card__name">Bulbasaur</span>
+                <input type="checkbox" id="seleccionar-001" value="seleccionado">
+                <label for="seleccionar-001">Seleccionar</label>
+                <input type="checkbox" id="favorito-001" value="favorito" checked disabled />
+                <label for="favorito-001">Favorito</label>
+            </li>
+
+            <li class="pokemon-card">
+                <img class="pokemon-card__image" src="assets/ivysaur.png" alt="Ivysaur" width="96" height="96">
+                <span class="pokemon-card__number">#002</span>
+                <span class="pokemon-card__name">Ivysaur</span>
+                <input type="checkbox" id="seleccionar-002" value="seleccionado">
+                <label for="seleccionar-002">Seleccionar</label>
+                <input type="checkbox" id="favorito-002" value="favorito" disabled />
+                <label for="favorito-002">Favorito</label>
+            </li>
+
+            <li class="pokemon-card">
+                <img class="pokemon-card__image" src="assets/venusaur.png" alt="Venusaur" width="96" height="96">
+                <span class="pokemon-card__number">#003</span>
+                <span class="pokemon-card__name">Venusaur</span>
+                <input type="checkbox" id="seleccionar-003" value="seleccionado">
+                <label for="seleccionar-003">Seleccionar</label>
+                <input type="checkbox" id="favorito-003" value="favorito" disabled />
+                <label for="favorito-003">Favorito</label>
+            </li>
+
+            <li class="pokemon-card">
+                <img class="pokemon-card__image" src="assets/charmander.png" alt="Charmander" width="96" height="96">
+                <span class="pokemon-card__number">#004</span>
+                <span class="pokemon-card__name">Charmander</span>
+                <input type="checkbox" id="seleccionar-004" value="seleccionado">
+                <label for="seleccionar-004">Seleccionar</label>
+                <input type="checkbox" id="favorito-004" value="favorito" disabled />
+                <label for="favorito-004">Favorito</label>
+            </li>
+
+            <li class="pokemon-card">
+                <img class="pokemon-card__image" src="assets/charmeleon.png" alt="Charmeleon" width="96" height="96">
+                <span class="pokemon-card__number">#005</span>
+                <span class="pokemon-card__name">Charmeleon</span>
+                <input type="checkbox" id="seleccionar-005" value="seleccionado">
+                <label for="seleccionar-005">Seleccionar</label>
+                <input type="checkbox" id="favorito-005" value="favorito" disabled />
+                <label for="favorito-005">Favorito</label>
+            </li>
+
+            <li class="pokemon-card">
+                <img class="pokemon-card__image" src="assets/charizard.png" alt="Charizard" width="96" height="96">
+                <span class="pokemon-card__number">#006</span>
+                <span class="pokemon-card__name">Charizard</span>
+                <input type="checkbox" id="seleccionar-006" value="seleccionado">
+                <label for="seleccionar-006">Seleccionar</label>
+                <input type="checkbox" id="favorito-006" value="favorito" checked disabled />
+                <label for="favorito-006">Favorito</label>
+            </li>
+
+            <li class="pokemon-card">
+                <img class="pokemon-card__image" src="assets/squirtle.png" alt="Squirtle" width="96" height="96">
+                <span class="pokemon-card__number">#007</span>
+                <span class="pokemon-card__name">Squirtle</span>
+                <input type="checkbox" id="seleccionar-007" value="seleccionado">
+                <label for="seleccionar-007">Seleccionar</label>
+                <input type="checkbox" id="favorito-007" value="favorito" checked disabled />
+                <label for="favorito-007">Favorito</label>
+            </li>
+
+            <li class="pokemon-card">
+                <img class="pokemon-card__image" src="assets/wartortle.png" alt="Wartortle" width="96" height="96">
+                <span class="pokemon-card__number">#008</span>
+                <span class="pokemon-card__name">Wartortle</span>
+                <input type="checkbox" id="seleccionar-008" value="seleccionado">
+                <label for="seleccionar-008">Seleccionar</label>
+                <input type="checkbox" id="favorito-008" value="favorito" disabled />
+                <label for="favorito-008">Favorito</label>
+            </li>
+
+            <li class="pokemon-card">
+                <img class="pokemon-card__image" src="assets/blastoise.png" alt="Blastoise" width="96" height="96">
+                <span class="pokemon-card__number">#009</span>
+                <span class="pokemon-card__name">Blastoise</span>
+                <input type="checkbox" id="seleccionar-009" value="seleccionado">
+                <label for="seleccionar-009">Seleccionar</label>
+                <input type="checkbox" id="favorito-009" value="favorito" disabled />
+                <label for="favorito-009">Favorito</label>
+            </li>
+
+            <li class="pokemon-card">
+                <img class="pokemon-card__image" src="assets/pikachu.png" alt="Pikachu" width="96" height="96">
+                <span class="pokemon-card__number">#025</span>
+                <span class="pokemon-card__name">Pikachu</span>
+                <input type="checkbox" id="seleccionar-010" value="seleccionado">
+                <label for="seleccionar-010">Seleccionar</label>
+                <input type="checkbox" id="favorito-010" value="favorito" checked disabled />
+                <label for="favorito-010">Favorito</label>
+            </li>
+        </ul>
+		<p>Mostrando 10 de 10 capturados</p>
+		</section>
+		<hr>
+		<p>3 de 6 seleccionados</p>
+		<button type="button">Marcar favorito</button>
+		<button type="button">Agregar al equipo</button>
+		<button type="button" command="close" commandfor="ver-capturados">Salir</button>
+	</dialog>
+    </article>
 
     <!-- FAVORITOS JAFFET -->
     <article class="tarjeta-seccion tarjeta-seccion--favoritos">
@@ -370,159 +524,8 @@
             </button>
         </dialog>
     </article>
-    
-    <!-- CAPTURADOS (FELI) -->
-    <article class="tarjeta-seccion tarjeta-seccion--capturados">
-        <span class="tarjeta-seccion__icono"></span>
+    </div>
 
-        <div class="tarjeta-seccion__texto">
-            <h2 class="tarjeta-seccion__titulo">Pokémon Capturados</h2>
-            <p class="tarjeta-seccion__subtitulo">10 capturados</p>
-        </div>
-
-        <button type="button" class="boton boton--claro boton--circulo boton--flecha"
-                command="show-modal" commandfor="ver-capturados">
-            <span class="solo-lectores">Ver Pokémon capturados</span>
-        </button>
-
-	<dialog id="ver-capturados">
-		<h2>Pokémones capturados</h2>
-		<hr>
-		<p>Seleccioná los que querés en tu equipo o marcalos como favoritos</p>
-		<search>
-			<form class="buscador" action="./" method="get">
-				<fieldset>
-					<legend>Criterios de búsqueda</legend>
-					<label for="nombre">Nombre</label>
-					<input type="search" id="nombre" name="nombre" placeholder="Busca por nombre">
-
-					<label for="tipo">Tipo</label>
-					<select id="tipo" name="tipo">
-						<option value="">Todos los tipos</option>
-						<option value="planta">Planta</option>
-						<option value="fuego">Fuego</option>
-						<option value="agua">Agua</option>
-						<option value="electrico">Eléctrico</option>
-						<option value="veneno">Veneno</option>
-						<option value="volador">Volador</option>
-					</select>
-
-					<button type="submit">Buscar</button>
-				</fieldset>
-			</form>
-		</search>
-		<section id="lista-pokemon">
-		<ul class="pokemon-list">
-            <li>
-                <img class="pokemon-card__image" src="assets/bulbasaur.png" alt="Bulbasaur" width="96" height="96">
-                <span class="pokemon-card__number">#001</span>
-                <span class="pokemon-card__name">Bulbasaur</span>
-                <input type="checkbox" id="seleccionar-001" value="seleccionado">
-                <label for="seleccionar-001">Seleccionar</label>
-                <input type="checkbox" id="favorito-001" value="favorito" checked disabled />
-                <label for="favorito-001">Favorito</label>
-            </li>
-
-            <li class="pokemon-card">
-                <img class="pokemon-card__image" src="assets/ivysaur.png" alt="Ivysaur" width="96" height="96">
-                <span class="pokemon-card__number">#002</span>
-                <span class="pokemon-card__name">Ivysaur</span>
-                <input type="checkbox" id="seleccionar-002" value="seleccionado">
-                <label for="seleccionar-002">Seleccionar</label>
-                <input type="checkbox" id="favorito-002" value="favorito" disabled />
-                <label for="favorito-002">Favorito</label>
-            </li>
-
-            <li class="pokemon-card">
-                <img class="pokemon-card__image" src="assets/venusaur.png" alt="Venusaur" width="96" height="96">
-                <span class="pokemon-card__number">#003</span>
-                <span class="pokemon-card__name">Venusaur</span>
-                <input type="checkbox" id="seleccionar-003" value="seleccionado">
-                <label for="seleccionar-003">Seleccionar</label>
-                <input type="checkbox" id="favorito-003" value="favorito" disabled />
-                <label for="favorito-003">Favorito</label>
-            </li>
-
-            <li class="pokemon-card">
-                <img class="pokemon-card__image" src="assets/charmander.png" alt="Charmander" width="96" height="96">
-                <span class="pokemon-card__number">#004</span>
-                <span class="pokemon-card__name">Charmander</span>
-                <input type="checkbox" id="seleccionar-004" value="seleccionado">
-                <label for="seleccionar-004">Seleccionar</label>
-                <input type="checkbox" id="favorito-004" value="favorito" disabled />
-                <label for="favorito-004">Favorito</label>
-            </li>
-
-            <li class="pokemon-card">
-                <img class="pokemon-card__image" src="assets/charmeleon.png" alt="Charmeleon" width="96" height="96">
-                <span class="pokemon-card__number">#005</span>
-                <span class="pokemon-card__name">Charmeleon</span>
-                <input type="checkbox" id="seleccionar-005" value="seleccionado">
-                <label for="seleccionar-005">Seleccionar</label>
-                <input type="checkbox" id="favorito-005" value="favorito" disabled />
-                <label for="favorito-005">Favorito</label>
-            </li>
-
-            <li class="pokemon-card">
-                <img class="pokemon-card__image" src="assets/charizard.png" alt="Charizard" width="96" height="96">
-                <span class="pokemon-card__number">#006</span>
-                <span class="pokemon-card__name">Charizard</span>
-                <input type="checkbox" id="seleccionar-006" value="seleccionado">
-                <label for="seleccionar-006">Seleccionar</label>
-                <input type="checkbox" id="favorito-006" value="favorito" checked disabled />
-                <label for="favorito-006">Favorito</label>
-            </li>
-
-            <li class="pokemon-card">
-                <img class="pokemon-card__image" src="assets/squirtle.png" alt="Squirtle" width="96" height="96">
-                <span class="pokemon-card__number">#007</span>
-                <span class="pokemon-card__name">Squirtle</span>
-                <input type="checkbox" id="seleccionar-007" value="seleccionado">
-                <label for="seleccionar-007">Seleccionar</label>
-                <input type="checkbox" id="favorito-007" value="favorito" checked disabled />
-                <label for="favorito-007">Favorito</label>
-            </li>
-
-            <li class="pokemon-card">
-                <img class="pokemon-card__image" src="assets/wartortle.png" alt="Wartortle" width="96" height="96">
-                <span class="pokemon-card__number">#008</span>
-                <span class="pokemon-card__name">Wartortle</span>
-                <input type="checkbox" id="seleccionar-008" value="seleccionado">
-                <label for="seleccionar-008">Seleccionar</label>
-                <input type="checkbox" id="favorito-008" value="favorito" disabled />
-                <label for="favorito-008">Favorito</label>
-            </li>
-
-            <li class="pokemon-card">
-                <img class="pokemon-card__image" src="assets/blastoise.png" alt="Blastoise" width="96" height="96">
-                <span class="pokemon-card__number">#009</span>
-                <span class="pokemon-card__name">Blastoise</span>
-                <input type="checkbox" id="seleccionar-009" value="seleccionado">
-                <label for="seleccionar-009">Seleccionar</label>
-                <input type="checkbox" id="favorito-009" value="favorito" disabled />
-                <label for="favorito-009">Favorito</label>
-            </li>
-
-            <li class="pokemon-card">
-                <img class="pokemon-card__image" src="assets/pikachu.png" alt="Pikachu" width="96" height="96">
-                <span class="pokemon-card__number">#025</span>
-                <span class="pokemon-card__name">Pikachu</span>
-                <input type="checkbox" id="seleccionar-010" value="seleccionado">
-                <label for="seleccionar-010">Seleccionar</label>
-                <input type="checkbox" id="favorito-010" value="favorito" checked disabled />
-                <label for="favorito-010">Favorito</label>
-            </li>
-        </ul>
-		<p>Mostrando 10 de 10 capturados</p>
-		</section>
-		<hr>
-		<p>3 de 6 seleccionados</p>
-		<button type="button">Marcar favorito</button>
-		<button type="button">Agregar al equipo</button>
-		<button type="button" command="close" commandfor="ver-capturados">Salir</button>
-	</dialog>
-    </article>
-        
     </main>
     <footer>
     <p><small>Proyecto académico del curso Desarrollo de Aplicaciones Web
