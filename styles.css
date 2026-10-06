@@ -1205,7 +1205,7 @@ footer a {
 .tarjeta-seccion--equipo      { --color-icono: var(--azul);     --icono: url("assets/icono-equipo.png"); }
 .tarjeta-seccion--capturados  { --color-icono: var(--rojo);     --icono: url("assets/pokeball.png"); }
 .tarjeta-seccion--favoritos   { --color-icono: var(--amarillo); --icono: url("assets/icono-estrella.png");}
-.tarjeta-seccion--estadisticas { --color-icono: var(--verde);   --icono: url("assets/icono-stats.png"); }
+.tarjeta-seccion--estadisticas { --color-icono: var(--verde);   --icono: url("assets/icono-stats.svg"); }
 
 .secciones {
   display: grid;
