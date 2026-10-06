@@ -1124,7 +1124,7 @@ footer a {
 .tarjeta-seccion__subtitulo { margin: 0; }
 
 .modal {
-  width: min(40rem, 92vw);
+  width: min(60rem, 92vw);
   padding: 0;
   border: 0;
   border-radius: 1.5rem;
