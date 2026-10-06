@@ -1045,6 +1045,15 @@ footer a {
   box-shadow: 0 18px 34px -14px rgba(20, 44, 82, 0.55);
 }
 
+/* La tarjeta principal del perfil vive fuera de <main>, así que no hereda su
+   contenedor: se le dan el mismo ancho máximo centrado y unos márgenes
+   laterales para que no toque los bordes de la pantalla. */
+.perfil {
+  max-width: 75rem;
+  width: calc(100% - 2rem);
+  margin: 1.5rem auto 0;
+}
+
 .perfil__info {
   flex: 1;
 }
@@ -1091,8 +1100,7 @@ footer a {
   content: "";
   width: 1rem;
   height: 1rem;
-  background-color: currentColor;
-  mask: var(--icono) center / contain no-repeat;
+  background: var(--icono) center / contain no-repeat;
 }
 
 .dato--lugar { --icono: url("assets/icono-ciudad.png"); }
@@ -1111,6 +1119,7 @@ footer a {
   height: 2.75rem;
   border-radius: 1rem;
   background: var(--color-icono);
+  box-shadow: 0 6px 14px -4px var(--color-icono);
 }
 .tarjeta-seccion__icono::before {
   content: "";
@@ -1210,7 +1219,7 @@ footer a {
 
 .secciones {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   margin-top: 1.5rem;
 }
@@ -1243,4 +1252,23 @@ footer a {
 
 @media (width >= 40rem) {
   .secciones { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* --------------------------------------------------------------------------
+   14. Animación nueva de botones (perfil)
+
+   Animación distinta a las de la sección 12 y a los hovers actuales: en vez
+   del "saltito" (translateY) que ya usan .logo y .boton, estos botones hacen
+   un giro con zoom (scale + rotate). Combina transform con transition nombrada
+   (transition: transform 0.2s ease, nunca con el valor all), dura 0.2s y
+   responde igual a :hover que a :focus-visible (teclado).
+   -------------------------------------------------------------------------- */
+
+.tarjeta-seccion .boton--circulo {
+  transition: transform 0.2s ease;
+}
+
+.tarjeta-seccion .boton--circulo:hover,
+.tarjeta-seccion .boton--circulo:focus-visible {
+  transform: scale(1.15) rotate(-8deg);
 }

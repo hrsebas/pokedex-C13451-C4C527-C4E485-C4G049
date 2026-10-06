@@ -71,11 +71,12 @@
   --linea:          #E3EAF3;  /* separadores finos dentro de tarjetas */
 
   /* --- Tipografía -------------------------------------------------------
-     Fredoka (redondeada, amable) para títulos y números; Figtree (limpia,
-     muy legible) para el texto corrido. Se cargan desde Google Fonts en el
-     <head>; si no llegan, cae a la siguiente de la lista sin romper nada. */
-  --fuente-titulo: "Fredoka", "Trebuchet MS", system-ui, sans-serif;
-  --fuente-texto:  "Figtree", system-ui, "Segoe UI", sans-serif;
+     Balsamiq Sans (redondeada, amable) para títulos y números; Noto Sans
+     (limpia, muy legible) para el texto corrido. Se cargan desde Google Fonts
+     en el <head>; si no llegan, cae a la siguiente de la lista sin romper
+     nada. */
+  --fuente-titulo: "Balsamiq Sans", "Trebuchet MS", system-ui, sans-serif;
+  --fuente-texto:  "Noto Sans", system-ui, "Segoe UI", sans-serif;
 
   /* --- Radios más generosos ---------------------------------------------- */
   --radio-lg:       24px;
