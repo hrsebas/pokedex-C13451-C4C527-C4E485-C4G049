@@ -1231,6 +1231,16 @@ footer a {
     margin: 0;
 }
 
+/* Para centrar el texto verticalmente*/
+.equipo-card--libre {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    background: var(--pista);
+    color: var(--navy);
+    border: 2px dashed var(--tinta-suave);
+}
+
 @media (width >= 40rem) {
   .secciones { grid-template-columns: repeat(2, 1fr); }
 }
