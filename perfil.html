@@ -26,6 +26,18 @@
 <!-- Cada tarjeta va dentro de una <section> sin encabezado propio; como ya están dentro
      de una lista, el contenido puede ir directo en el <li> (o en un <article>). -->
 
+<!-- en el tipo de Pikachu (class="tipo tipo--eléctrico") -->
+<!-- La clase lleva tilde (tipo--eléctrico) pero en el CSS está sin tilde (.tipo--electrico),
+     así que no coincide y esa pastilla no toma su color. Debe ser tipo--electrico. -->
+
+<!-- en la sección .perfil (está antes de <main>) -->
+<!-- La tarjeta de perfil, que es el contenido principal de la página, quedó fuera de <main>.
+     Convendría moverla adentro para que la región principal contenga el contenido central. -->
+
+<!-- en el formulario de editar (label for="nombre" / input id="nombre-entrenador") -->
+<!-- El for del label no coincide con el id del input; deben ser iguales para que la etiqueta
+     quede asociada. -->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
