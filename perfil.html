@@ -8,14 +8,17 @@
   <link rel="icon" type="image/svg+xml" href="assets/pokeball.svg">
   <link rel="icon" type="image/png" href="assets/pokeball.png">
   <!-- favicon.ico vive en la raiz: el navegador lo pide solo, sin <link> -->
-  
+
+  <!-- Link de conexion con fonts (Balsamiq Sans y Noto Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap">
+
   <!-- Hoja de estilos del sitio. Mismo elemento <link> que el favicon;
   lo que cambia es rel, que dice qué relación tiene el archivo con el documento. -->
   <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="styles.css">
 </head>
-
-
 
 <body>
     <header>
@@ -28,22 +31,40 @@
         <nav>
         <ul>
             <li><a href="index.html" accesskey="p">Pokédex</a></li>
-            <li><a href="perfil.html">Perfil de entrenador</a></li>
+            <li><a href="perfil.html" aria-current="page">Perfil de entrenador</a></li>
             <li><a href="acerca-de.html">Acerca de</a></li>
             <li><a href="configuracion.html">Configuración</a></li>
         </ul>
         </nav>
     </header>
+
+   <section class="perfil">
+    <img class="perfil__avatar" src="assets/imagen-trainer.png"
+        alt="Foto de perfil del entrenador" width="144" height="144">
+
+    <div class="perfil__info">
+        <h2>
+        <span class="perfil__insignia">#0001</span> Red
+        </h2>
+
+        <ul class="perfil__datos">
+        <li class="dato dato--edad"><span class="solo-lectores">Edad:</span> 20 años</li>
+        <li class="dato dato--lugar"><span class="solo-lectores">Ciudad:</span> Pueblo Desampa</li>
+        <li class="dato dato--estatura"><span class="solo-lectores">Estatura:</span> 1.70 m</li>
+        </ul>
+
+        <p>Entrenador de Pueblo Desampa que soñó…</p>
+    </div>
+
+    <button type="button" class="boton boton--rojo"
+            command="show-modal" commandfor="editar-perfil">
+        Editar perfil
+    </button>
+    </section>  
     <main> 
         <!-- Detalles del perfil-->
         <section>
-            <hr>
-            <h2>#0001 Red</h2>
             <!-- Para actualizar el perfil-->
-            <p><button type="button" command="show-modal" commandfor="editar-perfil">
-                    Editar perfil
-            </button></p>
-
             <dialog id="editar-perfil">
             <form method="dialog">
                 <h2>Editar perfil</h2>
@@ -81,246 +102,130 @@
                 </p>
             </form>
             </dialog>
-
-
-            <!-- Muestra los detalles del perfil-->
-            
-            <p>Edad: 11 años</p>
-            <p>Ciudad origen: Pueblo Paleta</p>
-            <p>Estatura: 1.50cm</p>
-            <p>Bio: Me gusta mucho coleccionar pokemones con mi novia de lol</p>
-            <hr>
         </section>
 
+    <!-- Secciones del perfil: tarjetas en dos columnas -->
+    <div class="secciones">
 
-    <p><button type="button" command="show-modal" commandfor="ver-equipo">
-        Team Pokémon
-    </button></p>
+    <!-- EQUIPO POKEMON ALE -->
+    <article class="tarjeta-seccion tarjeta-seccion--equipo">
+        <span class="tarjeta-seccion__icono"></span>
 
-    
-    <dialog id="ver-equipo">
-        <h3>Team Pokémon</h3>
-        <p>5 de 6 espacios ocupados</p>
-        
-        <ul>
-            <li>
-                <section>
-                    <img class="pokemon-card__image" src="assets/bulbasaur.png" alt="Bulbasaur" width="96" height="96">
-                    <p>#001</p>
-                    <p>Bulbasaur</p>
-                    <p><button type="button" command="show-modal" >Quitar</button></p>
-            
-                </section>
-            </li>
-            <li>
-                <section>
-                    <img class="pokemon-card__image" src="assets/ivysaur.png" alt="Ivysaur" width="96" height="96">
-                    <p>#002</p>
-                    <p>Ivysaur</p>
-                    <p><button type="button" command="show-modal" >Quitar</button></p>
-            
-                </section>
-            </li>
-            <li>
-                <section>
-                    <img class="pokemon-card__image" src="assets/venusaur.png" alt="Venusaur" width="96" height="96">
-                    <p>#003</p>
-                    <p>Venusaur</p>
-                    <p><button type="button" command="show-modal" >Quitar</button></p>
-            
-                </section>
-            </li>
-            <li>
-                <section>
-                    <img class="pokemon-card__image" src="assets/charmander.png" alt="Charmander" width="96" height="96">
-                    <p>#004</p>
-                    <p>Charmander</p>
-                    <p><button type="button" command="show-modal" >Quitar</button></p>
-                </section>
-            </li>
-            <li>
-                <section>
-                    <img class="pokemon-card__image" src="assets/charmeleon.png" alt="Charmaleon" width="96" height="96">
-                    <p>#005</p>
-                    <p>Charmeleon</p>
-                    <p><button type="button" command="show-modal" >Quitar</button></p>
-                </section>
-            </li>
-            <li>
-                <section>
-                    <p>Espacio libre</p>
-                </section>
-            </li>
-        </ul>
-        
-        
-        <button type="button" command="close" commandfor="ver-equipo">Cerrar</button>
-        <button type="button" command="close" commandfor="ver-equipo">Agregar desde capturados</button>
-    </dialog>
-    
+        <div class="tarjeta-seccion__texto">
+            <h2 class="tarjeta-seccion__titulo">Equipo Pokémon</h2>
+            <p class="tarjeta-seccion__subtitulo">5 de 6 espacios ocupados</p>
+        </div>
 
-    <!-- FAVORITOS (JAFFET) -->
-        <section id="PokemonFavoritos"> 
-            
-            <button  command="show-modal" commandfor="dialogoFav"> 
-                Favorito 
-            </button>
-            <dialog id="dialogoFav">
-                <h2>Favoritos</h2>
-                <section id="listaPokesFavInterna">
-                    <h3>N Pokemon marcados como favoritos</h3>
-                    <ul>
-                        <li>
-                            <img src="assets/bulbasaur.png" alt="Bulbasaur" width="96" height="96">
-                            <span>#001</span>
-                            <span>Bulbasaur</span>
-                            <button>Ver detalle</button>
-                            <button>Quitar Favorito</button>
-                        </li>
-                        <li>
-                            <img src="assets/ivysaur.png" alt="Ivysour" width="96" height="96">
-                            <span>#002</span>
-                            <span>Ivisour</span>
-                            <button>Ver detalle</button>
-                            <button>Quitar Favorito</button>
-                        </li>
-                        <li>
-                            <img src="assets/charizard.png" alt="Charizard" width="96" height="96">
-                            <span>#006</span>
-                            <span>Charizard</span>
-                            <button>Ver detalle</button>
-                            <button>Quitar Favorito</button>
-                        </li>
-                        <li>
-                            <img src="assets/squirtle.png" alt="Squirtle" width="96" height="96">
-                            <span>#007</span>
-                            <span>Squirtle</span>
-                            <button>Ver detalle</button>
-                            <button>Quitar Favorito</button>
-                        </li>
-                    </ul>
-                </section>
-                <button id="agregarCapturado" type="button">Agregar desde Capturados</button>
-                <button id="cerrarFav" command="close" commandfor="dialogoFav">Cerrar</button>
-            </dialog>
-        </section>
-        
-    <!-- ESTADÍSTICAS (SEBAS) -->
-    <section id="PokemonEstadisticas">
-        <button id="mostrarEstadisticas" type="button" command="show-modal" commandfor="dialogoEstadisticas">
-            Mostrar estadísticas
+        <button type="button" class="boton boton--claro boton--circulo boton--flecha"
+                command="show-modal" commandfor="ver-equipo">
+            <span class="solo-lectores">Ver equipo</span>
         </button>
 
-        <dialog id="dialogoEstadisticas" aria-labelledby="tituloEstadisticas">
-            <h2 id="tituloEstadisticas">Estadísticas</h2>
+        <dialog id="ver-equipo" class="modal">
+            <div class="modal__encabezado">
+                <span class="tarjeta-seccion__icono"></span>
+                <h2 class="modal__titulo">Team Pokémon</h2>
+                <button type="button" class="boton boton--claro boton--circulo boton--cerrar"
+                        command="close" commandfor="ver-equipo">
+                    <span class="solo-lectores">Cerrar</span>
+                </button>
+            </div>
 
-            <table>
-                <caption>Comparativa de  los Pokémon de tu equipo</caption>
-                <thead>
-                    <tr>
-                        <th scope="col">Pokémon</th>
-                        <th scope="col">PS</th>
-                        <th scope="col">ATQ</th>
-                        <th scope="col">DEF</th>
-                        <th scope="col">AT.ESP</th>
-                        <th scope="col">DEF.ESP</th>
-                        <th scope="col">VEL</th>
-                        <th scope="col">Total</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">
-                            <img src="assets/bulbasaur.png" alt="Imagen de Bulbasaur" width="32" height="32">
-                            Bulbasaur
-                        </th>
-                        <td>45</td>
-                        <td>49</td>
-                        <td>49</td>
-                        <td>65</td>
-                        <td>65</td>
-                        <td>45</td>
-                        <td>318</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            <img src="assets/ivysaur.png" alt="Imagen de Ivysaur" width="32" height="32">
-                            Ivysaur
-                        </th>
-                        <td>60</td>
-                        <td>62</td>
-                        <td>63</td>
-                        <td>80</td>
-                        <td>80</td>
-                        <td>60</td>
-                        <td>405</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            <img src="assets/venusaur.png" alt="Imagen de Venusaur" width="32" height="32">
-                            Venusaur
-                        </th>
-                        <td>80</td>
-                        <td>82</td>
-                        <td>83</td>
-                        <td>100</td>
-                        <td>100</td>
-                        <td>80</td>
-                        <td>525</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            <img src="assets/charmander.png" alt="Imagen de Charmander" width="32" height="32">
-                            Charmander
-                        </th>
-                        <td>39</td>
-                        <td>52</td>
-                        <td>43</td>
-                        <td>60</td>
-                        <td>50</td>
-                        <td>65</td>
-                        <td>309</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            <img src="assets/charmeleon.png" alt="Imagen de Charmeleon" width="32" height="32">
-                            Charmeleon
-                        </th>
-                        <td>58</td>
-                        <td>64</td>
-                        <td>58</td>
-                        <td>80</td>
-                        <td>65</td>
-                        <td>80</td>
-                        <td>405</td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <th scope="row">Promedio del equipo</th>
-                        <td>56.4</td>
-                        <td>61.8</td>
-                        <td>59.2</td>
-                        <td>77</td>
-                        <td>72</td>
-                        <td>66</td>
-                        <td>392.4</td>
-                    </tr>
-                </tfoot>
-            </table>
+            <div class="modal__contenido">
+                <p>5 de 6 espacios ocupados</p>
 
-            <p>Valores base tomados de la Pokédex - la fila de totales resume el equipo completo.</p>
+                <ul class="equipo-grid">
+                    <li class="pokemon-card">
+                        <section>
+                            <img class="pokemon-card__image" src="assets/bulbasaur.png" alt="Bulbasaur" width="96" height="96">
+                            <p class="pokemon-card__number">#001</p>
+                            <p class="pokemon-card__name">Bulbasaur</p>
+                            <p>
+                                <span class="tipo tipo--planta">Planta</span>
+                                <span class="tipo tipo--veneno">Veneno</span>
+                            </p>
+                            <p><button type="button" class="boton boton--borde-rojo boton--chico">- Quitar</button></p>
 
-            <button type="button" command="close" commandfor="dialogoEstadisticas">
-                Cerrar
-            </button>
+                        </section>
+                    </li>
+                    <li class="pokemon-card">
+                        <section>
+                            <img class="pokemon-card__image" src="assets/ivysaur.png" alt="Ivysaur" width="96" height="96">
+                            <p class="pokemon-card__number">#002</p>
+                            <p class="pokemon-card__name">Ivysaur</p>
+                            <p>
+                                <span class="tipo tipo--planta">Planta</span>
+                                <span class="tipo tipo--veneno">Veneno</span>
+                            </p>
+                            <p><button type="button" class="boton boton--borde-rojo boton--chico">- Quitar</button></p>
+                    
+                        </section>
+                    </li>
+                    <li class="pokemon-card">
+                        <section>
+                            <img class="pokemon-card__image" src="assets/charmander.png" alt="Charmander" width="96" height="96">
+                            <p class="pokemon-card__number">#004</p>
+                            <p class="pokemon-card__name">Charmander</p>
+                            <p>
+                                <span class="tipo tipo--fuego">Fuego</span>
+                            </p>
+                            <p><button type="button" class="boton boton--borde-rojo boton--chico">- Quitar</button></p>
+                    
+                        </section>
+                    </li>
+                    <li class="pokemon-card">
+                        <section>
+                            <img class="pokemon-card__image" src="assets/squirtle.png" alt="Squirtle" width="96" height="96">
+                            <p class="pokemon-card__number">#007</p>
+                            <p class="pokemon-card__name">Squirtle</p>
+                            <p>
+                                <span class="tipo tipo--agua">Agua</span>
+                            </p>
+                            <p><button type="button" class="boton boton--borde-rojo boton--chico">- Quitar</button></p>
+                        </section>
+                    </li>
+                    <li class="pokemon-card">
+                        <section>
+                            <img class="pokemon-card__image" src="assets/pikachu.png" alt="Pikachu" width="96" height="96">
+                            <p class="pokemon-card__number">#025</p>
+                            <p class="pokemon-card__name">Pikachu</p>
+                            <p>
+                                <span class="tipo tipo--eléctrico">Eléctrico</span>
+                            </p>
+                            <p><button type="button" class="boton boton--borde-rojo boton--chico">- Quitar</button></p>
+                        </section>
+                    </li>
+                    <li class="pokemon-card equipo-card--libre">
+                        <section>
+                            <button type="button" class="boton boton--claro boton--circulo boton--suma">
+                                <span class="solo-lectores">Agregar pokemon</span>
+                            </button>
+                            <p class="pokemon-card__name">Espacio libre</p>
+                        </section>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="modal__pie">
+                <button type="button" class="boton boton--primario">Agregar desde capturados</button>
+                <button type="button" class="boton boton--claro" command="close" commandfor="ver-equipo">Cerrar</button>
+            </div>
         </dialog>
-    </section>
-    
+    </article>
+
     <!-- CAPTURADOS (FELI) -->
-	<button type="button" command="show-modal" commandfor="ver-capturados">
-		Ver capturados
-	</button>
+    <article class="tarjeta-seccion tarjeta-seccion--capturados">
+        <span class="tarjeta-seccion__icono"></span>
+
+        <div class="tarjeta-seccion__texto">
+            <h2 class="tarjeta-seccion__titulo">Pokémon Capturados</h2>
+            <p class="tarjeta-seccion__subtitulo">10 capturados</p>
+        </div>
+
+        <button type="button" class="boton boton--claro boton--circulo boton--flecha"
+                command="show-modal" commandfor="ver-capturados">
+            <span class="solo-lectores">Ver Pokémon capturados</span>
+        </button>
 
 	<dialog id="ver-capturados">
 		<h2>Pokémones capturados</h2>
@@ -458,7 +363,240 @@
 		<button type="button">Agregar al equipo</button>
 		<button type="button" command="close" commandfor="ver-capturados">Salir</button>
 	</dialog>
-        
+    </article>
+
+    <!-- FAVORITOS JAFFET -->
+    <article class="tarjeta-seccion tarjeta-seccion--favoritos">
+        <span class="tarjeta-seccion__icono"></span>
+
+        <div class="tarjeta-seccion__texto">
+            <h2 class="tarjeta-seccion__titulo">Favoritos</h2>
+            <p class="tarjeta-seccion__subtitulo">4 Pokémon marcados</p>
+        </div>
+
+        <button type="button" class="boton boton--claro boton--circulo boton--flecha"
+                command="show-modal" commandfor="dialogoFav">
+            <span class="solo-lectores">Ver favoritos</span>
+        </button>
+
+        <dialog id="dialogoFav" class="modal">
+            <div class="modal__encabezado">
+            <span class="tarjeta-seccion__icono"></span>
+            <h2 class="modal__titulo">Favoritos</h2>
+            <button type="button" class="boton boton--claro boton--circulo boton--cerrar"
+                    command="close" commandfor="dialogoFav">
+                <span class="solo-lectores">Cerrar</span>
+            </button>
+        </div>
+
+            <div class="modal__contenido">
+            <p>4 Pokémon marcados como favoritos</p>
+
+            <ul class="modal__lista">
+                <li class="modal__fila">
+                    <span class="modal__estrella"></span>
+                    <img src="assets/bulbasaur.png" alt="" width="64" height="64">
+                    <div class="modal__texto">
+                        <span>Bulbasaur</span>
+                        <span class="pokemon-card__number">#001</span>
+
+                        <div>
+                            <span class="tipo tipo--planta">Planta</span>
+                            <span class="tipo tipo--veneno">Veneno</span>
+                        </div>
+                    </div>
+                    <button type="button" class="boton boton--borde-azul boton--chico">Ver detalle</button>
+                    <button type="button" class="boton boton--borde-rojo boton--chico">Quitar de favoritos X</button>
+                </li>
+
+                <li class="modal__fila">
+                    <span class="modal__estrella"></span>
+                    <img src="assets/ivysaur.png" alt="" width="64" height="64">
+                    <div class="modal__texto">
+                        <span>Ivysaur</span>
+                        <span class="pokemon-card__number">#002</span>
+
+                        <div>
+                            <span class="tipo tipo--planta">Planta</span>
+                            <span class="tipo tipo--veneno">Veneno</span>
+                        </div>
+                    </div>
+                    <button type="button" class="boton boton--borde-azul boton--chico">Ver detalle</button>
+                    <button type="button" class="boton boton--borde-rojo boton--chico">Quitar de favoritos X</button>
+                </li>
+
+                <li class="modal__fila">
+                    <span class="modal__estrella"></span>
+                    <img src="assets/charizard.png" alt="" width="64" height="64">
+                    <div class="modal__texto">
+                        <span>Charizard</span>
+                        <span class="pokemon-card__number">#006</span>
+
+                        <div>
+                            <span class="tipo tipo--fuego">Fuego</span>
+                            <span class="tipo tipo--volador">Volador</span>
+                        </div>
+                    </div>
+                    <button type="button" class="boton boton--borde-azul boton--chico">Ver detalle</button>
+                    <button type="button" class="boton boton--borde-rojo boton--chico">Quitar de favoritos X</button>
+                </li>
+
+                <li class="modal__fila">
+                    <span class="modal__estrella"></span>
+                    <img src="assets/squirtle.png" alt="" width="64" height="64">
+                    <div class="modal__texto">
+                        <span>Squirtle</span>
+                        <span class="pokemon-card__number">#007</span>
+
+                        <div>
+                            <span class="tipo tipo--agua">Agua</span>
+                        </div>
+                    </div>
+                    <button type="button" class="boton boton--borde-azul boton--chico">Ver detalle</button>
+                    <button type="button" class="boton boton--borde-rojo boton--chico">Quitar de favoritos X</button>
+                </li>
+            </ul>
+            </div>
+
+            <div class="modal__pie">
+            <button type="button" class="boton boton--primario">Agregar desde capturados</button>
+            <button type="button" class="boton boton--claro"    
+                    command="close" commandfor="dialogoFav">Cerrar</button>
+            </div>
+        </dialog>
+    </article>
+
+    <!-- ESTADÍSTICAS (SEBAS) -->
+    <article class="tarjeta-seccion tarjeta-seccion--estadisticas">
+        <span class="tarjeta-seccion__icono"></span>
+
+        <div class="tarjeta-seccion__texto">
+            <h2 class="tarjeta-seccion__titulo">Estadísticas</h2>
+            <p class="tarjeta-seccion__subtitulo">Comparativa de tu equipo</p>
+        </div>
+
+        <button type="button" class="boton boton--claro boton--circulo boton--flecha"
+                command="show-modal" commandfor="dialogoEstadisticas">
+            <span class="solo-lectores">Ver estadísticas</span>
+        </button>
+
+        <dialog id="dialogoEstadisticas" class="modal modal--estadisticas" aria-labelledby="tituloEstadisticas">
+            <div class="modal__encabezado">
+                <span class="tarjeta-seccion__icono"></span>
+                <h2 class="modal__titulo" id="tituloEstadisticas">Estadísticas</h2>
+                <button type="button" class="boton boton--claro boton--circulo boton--cerrar"
+                        command="close" commandfor="dialogoEstadisticas">
+                    <span class="solo-lectores">Cerrar</span>
+                </button>
+            </div>
+
+            <div class="modal__contenido">
+                <table class="stats-table stats-table--equipo">
+                    <caption>Comparativa de los Pokémon de tu equipo</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Pokémon</th>
+                            <th scope="col">PS</th>
+                            <th scope="col">ATQ</th>
+                            <th scope="col">DEF</th>
+                            <th scope="col">AT.ESP</th>
+                            <th scope="col">DEF.ESP</th>
+                            <th scope="col">VEL</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                <img src="assets/bulbasaur.png" alt="" width="32" height="32">
+                                Bulbasaur
+                            </th>
+                            <td>45</td>
+                            <td>49</td>
+                            <td>49</td>
+                            <td>65</td>
+                            <td>65</td>
+                            <td>45</td>
+                            <td><span class="stats-table__pastilla">318</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <img src="assets/ivysaur.png" alt="" width="32" height="32">
+                                Ivysaur
+                            </th>
+                            <td>60</td>
+                            <td>62</td>
+                            <td>63</td>
+                            <td>80</td>
+                            <td>80</td>
+                            <td>60</td>
+                            <td><span class="stats-table__pastilla">405</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <img src="assets/venusaur.png" alt="" width="32" height="32">
+                                Venusaur
+                            </th>
+                            <td class="stats-table__max">80</td>
+                            <td class="stats-table__max">82</td>
+                            <td class="stats-table__max">83</td>
+                            <td class="stats-table__max">100</td>
+                            <td class="stats-table__max">100</td>
+                            <td class="stats-table__max">80</td>
+                            <td><span class="stats-table__pastilla">525</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <img src="assets/charmander.png" alt="" width="32" height="32">
+                                Charmander
+                            </th>
+                            <td>39</td>
+                            <td>52</td>
+                            <td>43</td>
+                            <td>60</td>
+                            <td>50</td>
+                            <td>65</td>
+                            <td><span class="stats-table__pastilla">309</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <img src="assets/charmeleon.png" alt="" width="32" height="32">
+                                Charmeleon
+                            </th>
+                            <td>58</td>
+                            <td>64</td>
+                            <td>58</td>
+                            <td>80</td>
+                            <td>65</td>
+                            <td class="stats-table__max">80</td>
+                            <td><span class="stats-table__pastilla">405</span></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="stats-table__total">
+                            <th scope="row">Promedio del equipo</th>
+                            <td>56.4</td>
+                            <td>61.8</td>
+                            <td>59.2</td>
+                            <td>77</td>
+                            <td>72</td>
+                            <td>66</td>
+                            <td>392.4</td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <p class="modal__nota">Valores base tomados de la Pokédex · la fila de totales resume el equipo completo.</p>
+            </div>
+
+            <div class="modal__pie">
+                <button type="button" class="boton boton--primario"
+                        command="close" commandfor="dialogoEstadisticas">Cerrar</button>
+            </div>
+        </dialog>
+    </article>
+    </div>
+
     </main>
     <footer>
     <p><small>Proyecto académico del curso Desarrollo de Aplicaciones Web
