@@ -1,3 +1,16 @@
+/* en los íconos ::before (.dato--*, .tarjeta-seccion--*, .boton--flecha, .modal__estrella) */
+/* Los íconos se cargan como PNG (icono-ciudad.png, icono-flecha.png...). El enunciado
+   pide SVG descargados de Figma: escalan sin perder nitidez y pesan menos. Conviene
+   reemplazar los PNG por SVG (como ya se hizo con icono-stats.svg). */
+
+/* en .secciones (grid-template-columns: 1fr 1fr y el @media >= 40rem con repeat(2,1fr)) */
+/* Tanto la base como la media query dejan 2 columnas, así que nunca baja a 1 en pantallas
+   angostas. Si la idea es 2×2 en escritorio y 1 columna en móvil, la base debería ser una
+   columna y el @media poner las dos. */
+
+
+
+
 /* ==========================================================================
    Pokédex — CI-0137
    Hoja de estilos del sitio — versión moderna
