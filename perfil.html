@@ -1,3 +1,31 @@
+<!-- en el encabezado del perfil (<h2>#0001 Red</h2>) -->
+<!-- La página no tiene <h1>: la jerarquía arranca en <h2>. El nombre del entrenador
+     debería ser el título de primer nivel (<h1>) para no saltarse niveles. -->
+
+<!-- en los datos del perfil (<p>Edad: 11 años</p>, etc.) -->
+<!-- Los pares dato–valor (edad, ciudad, estatura) convienen marcarse como lista de
+     descripción (<dl> con <dt>/<dd>), p. ej. <dt>Edad</dt><dd>11 años</dd>, en vez de
+     párrafos sueltos. -->
+
+<!-- en los botones "Quitar" del equipo (command="show-modal") -->
+<!-- Estos botones usan command="show-modal" pero sin commandfor, así que no apuntan a
+     ningún diálogo y quedan rotos. Para el Lab 1 basta con type="button" (aún no hacen
+     nada). -->
+
+<!-- en el <title> (head) -->
+<!-- El <title> dice "Lista de Pokémon", pero esta es la página de perfil: debería ser
+     descriptivo y distinto del resto (p. ej. "Pokédex - Perfil de entrenador").
+     Falta también la meta description en los metadatos. -->
+
+<!-- en el formulario de editar (label for="nombre" / input id="nombre-entrenador") -->
+<!-- El <label for="nombre"> no coincide con el input, que tiene id="nombre-entrenador":
+     el for y el id deben ser iguales para que la etiqueta quede asociada. Además,
+     Biografía quedaría mejor como <textarea> que como <input>. -->
+
+<!-- en cada Pokémon del equipo (<li><section>...) [opcional] -->
+<!-- Cada tarjeta va dentro de una <section> sin encabezado propio; como ya están dentro
+     de una lista, el contenido puede ir directo en el <li> (o en un <article>). -->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
