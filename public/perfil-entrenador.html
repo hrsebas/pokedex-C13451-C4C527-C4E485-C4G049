@@ -97,8 +97,8 @@
               <span class="seccion__icono"><svg class="icono icono--grande" aria-hidden="true" width="24" height="24"><use href="#i-team"/></svg></span>
               <span class="seccion__texto">
                 <span class="seccion__titulo">Equipo Pokémon</span>
-                <span class="seccion__detalle">5 de 6 espacios ocupados</span>
-                <ul class="mini-sprites" aria-hidden="true"></ul>
+                <span class="seccion__detalle">0 de 6 espacios ocupados</span>
+                <span class="mini-sprites" aria-hidden="true"></span>
               </span>
               <span class="seccion__flecha"><svg class="icono " aria-hidden="true" width="24" height="24"><use href="#i-arrow"/></svg></span>
             </button>
@@ -109,7 +109,7 @@
               <span class="seccion__texto">
                 <span class="seccion__titulo">Pokémon Capturados</span>
                 <span class="seccion__detalle">24 Pokémon en tu colección</span>
-                <ul class="mini-sprites" aria-hidden="true"></ul>
+                <span class="mini-sprites" aria-hidden="true"></span>
               </span>
               <span class="seccion__flecha"><svg class="icono " aria-hidden="true" width="24" height="24"><use href="#i-arrow"/></svg></span>
             </button>
@@ -119,8 +119,8 @@
               <span class="seccion__icono"><svg class="icono icono--grande icono--lleno" aria-hidden="true" width="24" height="24"><use href="#i-star"/></svg></span>
               <span class="seccion__texto">
                 <span class="seccion__titulo">Favoritos</span>
-                <span class="seccion__detalle">4 Pokémon marcados</span>
-                <ul class="mini-sprites" aria-hidden="true"></ul>
+                <span class="seccion__detalle">0 Pokémon marcados</span>
+                <span class="mini-sprites" aria-hidden="true"></span>
               </span>
               <span class="seccion__flecha"><svg class="icono " aria-hidden="true" width="24" height="24"><use href="#i-arrow"/></svg></span>
             </button>
@@ -167,41 +167,11 @@
 
       <div class="modal__cuerpo">
         <p class="modal__subtitulo">
-          <span>5 de 6 espacios ocupados</span>
+          <span>0 de 6 espacios ocupados</span>
         </p>
 
-        <ul class="equipo">
-            <li class="equipo__ficha">
-              <div class="sprite-zona"><span class="numero">#001</span><img src="assets/bulbasaur.png" alt="" width="96" height="96"></div>
-              <h3>Bulbasaur</h3>
-              <span class="tipos"><span class="tipo tipo--planta">Planta</span><span class="tipo tipo--veneno">Veneno</span></span>
-              <button type="button" class="boton boton--borde-rojo boton--chico"><svg class="icono " aria-hidden="true" width="24" height="24"><use href="#i-minus"/></svg> Quitar<span class="solo-lectores"> a Bulbasaur del equipo</span></button>
-            </li>
-            <li class="equipo__ficha">
-              <div class="sprite-zona"><span class="numero">#002</span><img src="assets/ivysaur.png" alt="" width="96" height="96"></div>
-              <h3>Ivysaur</h3>
-              <span class="tipos"><span class="tipo tipo--planta">Planta</span><span class="tipo tipo--veneno">Veneno</span></span>
-              <button type="button" class="boton boton--borde-rojo boton--chico"><svg class="icono " aria-hidden="true" width="24" height="24"><use href="#i-minus"/></svg> Quitar<span class="solo-lectores"> a Ivysaur del equipo</span></button>
-            </li>
-            <li class="equipo__ficha">
-              <div class="sprite-zona"><span class="numero">#004</span><img src="assets/charmander.png" alt="" width="96" height="96"></div>
-              <h3>Charmander</h3>
-              <span class="tipos"><span class="tipo tipo--fuego">Fuego</span></span>
-              <button type="button" class="boton boton--borde-rojo boton--chico"><svg class="icono " aria-hidden="true" width="24" height="24"><use href="#i-minus"/></svg> Quitar<span class="solo-lectores"> a Charmander del equipo</span></button>
-            </li>
-            <li class="equipo__ficha">
-              <div class="sprite-zona"><span class="numero">#007</span><img src="assets/squirtle.png" alt="" width="96" height="96"></div>
-              <h3>Squirtle</h3>
-              <span class="tipos"><span class="tipo tipo--agua">Agua</span></span>
-              <button type="button" class="boton boton--borde-rojo boton--chico"><svg class="icono " aria-hidden="true" width="24" height="24"><use href="#i-minus"/></svg> Quitar<span class="solo-lectores"> a Squirtle del equipo</span></button>
-            </li>
-            <li class="equipo__ficha">
-              <div class="sprite-zona"><span class="numero">#025</span><img src="assets/pikachu.png" alt="" width="96" height="96"></div>
-              <h3>Pikachu</h3>
-              <span class="tipos"><span class="tipo tipo--electrico">Eléctrico</span></span>
-              <button type="button" class="boton boton--borde-rojo boton--chico"><svg class="icono " aria-hidden="true" width="24" height="24"><use href="#i-minus"/></svg> Quitar<span class="solo-lectores"> a Pikachu del equipo</span></button>
-            </li>
-        </ul>
+        <!-- Las fichas las genera perfil-entrenador.js a partir de localStorage. -->
+        <ul class="equipo"></ul>
       </div>
 
       <div class="modal__pie">
@@ -224,58 +194,10 @@
       </div>
 
       <div class="modal__cuerpo">
-        <p class="modal__subtitulo">4 Pokémon marcados como favoritos</p>
+        <p class="modal__subtitulo">0 Pokémon marcados como favoritos</p>
 
-        <ul class="favoritos">
-            <li class="favorito">
-              <span class="favorito__estrella"><svg class="icono icono--fav" aria-hidden="true" width="24" height="24"><use href="#i-star"/></svg></span>
-              <div class="sprite-zona sprite-zona--chica"><img src="assets/bulbasaur.png" alt="" width="64" height="64"></div>
-              <div class="favorito__datos">
-                <h3>Bulbasaur <span class="numero">#001</span></h3>
-                <span class="tipos"><span class="tipo tipo--planta">Planta</span><span class="tipo tipo--veneno">Veneno</span></span>
-              </div>
-              <div class="favorito__acciones">
-                <a class="boton boton--borde-azul boton--chico" href="detalle.html?id=1">Ver detalle <svg class="icono " aria-hidden="true" width="24" height="24"><use href="#i-arrow"/></svg></a>
-                <button type="button" class="boton boton--borde-rojo boton--chico">Quitar de favoritos<span class="solo-lectores">: Bulbasaur</span></button>
-              </div>
-            </li>
-            <li class="favorito">
-              <span class="favorito__estrella"><svg class="icono icono--fav" aria-hidden="true" width="24" height="24"><use href="#i-star"/></svg></span>
-              <div class="sprite-zona sprite-zona--chica"><img src="assets/charmander.png" alt="" width="64" height="64"></div>
-              <div class="favorito__datos">
-                <h3>Charmander <span class="numero">#004</span></h3>
-                <span class="tipos"><span class="tipo tipo--fuego">Fuego</span></span>
-              </div>
-              <div class="favorito__acciones">
-                <a class="boton boton--borde-azul boton--chico" href="detalle.html?id=4">Ver detalle <svg class="icono " aria-hidden="true" width="24" height="24"><use href="#i-arrow"/></svg></a>
-                <button type="button" class="boton boton--borde-rojo boton--chico">Quitar de favoritos<span class="solo-lectores">: Charmander</span></button>
-              </div>
-            </li>
-            <li class="favorito">
-              <span class="favorito__estrella"><svg class="icono icono--fav" aria-hidden="true" width="24" height="24"><use href="#i-star"/></svg></span>
-              <div class="sprite-zona sprite-zona--chica"><img src="assets/squirtle.png" alt="" width="64" height="64"></div>
-              <div class="favorito__datos">
-                <h3>Squirtle <span class="numero">#007</span></h3>
-                <span class="tipos"><span class="tipo tipo--agua">Agua</span></span>
-              </div>
-              <div class="favorito__acciones">
-                <a class="boton boton--borde-azul boton--chico" href="detalle.html?id=7">Ver detalle <svg class="icono " aria-hidden="true" width="24" height="24"><use href="#i-arrow"/></svg></a>
-                <button type="button" class="boton boton--borde-rojo boton--chico">Quitar de favoritos<span class="solo-lectores">: Squirtle</span></button>
-              </div>
-            </li>
-            <li class="favorito">
-              <span class="favorito__estrella"><svg class="icono icono--fav" aria-hidden="true" width="24" height="24"><use href="#i-star"/></svg></span>
-              <div class="sprite-zona sprite-zona--chica"><img src="assets/pikachu.png" alt="" width="64" height="64"></div>
-              <div class="favorito__datos">
-                <h3>Pikachu <span class="numero">#025</span></h3>
-                <span class="tipos"><span class="tipo tipo--electrico">Eléctrico</span></span>
-              </div>
-              <div class="favorito__acciones">
-                <a class="boton boton--borde-azul boton--chico" href="detalle.html?id=25">Ver detalle <svg class="icono " aria-hidden="true" width="24" height="24"><use href="#i-arrow"/></svg></a>
-                <button type="button" class="boton boton--borde-rojo boton--chico">Quitar de favoritos<span class="solo-lectores">: Pikachu</span></button>
-              </div>
-            </li>
-        </ul>
+        <!-- Las fichas las genera perfil-entrenador.js a partir de localStorage. -->
+        <ul class="favoritos"></ul>
       </div>
 
       <div class="modal__pie">
@@ -410,9 +332,10 @@
 
       <div class="modal__pie">
         <div class="modal__acciones">
-          <button type="button" class="boton boton--claro"><svg class="icono " aria-hidden="true" width="24" height="24"><use href="#i-star"/></svg> Marcar favorito</button>
-          <button type="button" class="boton boton--primario"><svg class="icono " aria-hidden="true" width="24" height="24"><use href="#i-plus"/></svg> Agregar al equipo</button>
+          <button type="button" class="boton boton--claro" id="boton-marcar-favorito"><svg class="icono " aria-hidden="true" width="24" height="24"><use href="#i-star"/></svg> Marcar favorito</button>
+          <button type="button" class="boton boton--primario" id="boton-agregar-equipo"><svg class="icono " aria-hidden="true" width="24" height="24"><use href="#i-plus"/></svg> Agregar al equipo</button>
         </div>
+        <p class="modal__aviso" role="status"></p>
       </div>
     </dialog>
 
