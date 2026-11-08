@@ -7,8 +7,8 @@
 // =============================================================
 import { buscarPorId, numeroPokedex } from './datos.js';
 import { listaCapturados } from './capturados.js';
-import { listaFavoritos, quitarFavorito } from './favoritos.js';
-import { listaEquipo, quitarDelEquipo, MAX_EQUIPO } from './equipo.js';
+import { listaFavoritos, agregarFavoritos, quitarFavorito } from './favoritos.js';
+import { listaEquipo, agregarAlEquipo, quitarDelEquipo, MAX_EQUIPO } from './equipo.js';
 
 function pintarCapturados() {
   // Convierte los ids guardados en fichas completas (y descarta ids raros)
@@ -41,7 +41,7 @@ function pintarCapturados() {
     } else {
       grilla.innerHTML = capturados.map((p) => `
         <li class="captura">
-          <input type="checkbox" class="captura__check" id="cap-${p.id}" aria-label="Seleccionar a ${p.nombre}">
+          <input type="checkbox" class="captura__check" id="cap-${p.id}" data-id="${p.id}" aria-label="Seleccionar a ${p.nombre}">
           <label class="captura__cuerpo" for="cap-${p.id}">
             <span class="sprite-zona"><img src="assets/${p.slug}.png" alt="" width="96" height="96"></span>
             <span class="numero">${numeroPokedex(p.id)}</span>
@@ -201,6 +201,66 @@ document.querySelector('#modal-equipo .equipo')?.addEventListener('click', (even
   pintarEquipo();
 });
 
+// -------------------------------------------------------------
+//  Selección en el diálogo "Pokémon capturados"
+// -------------------------------------------------------------
+
+// Devuelve los ids de los Pokémon marcados en el diálogo "Pokémon capturados".
+function idsSeleccionados() {
+  const marcadas = document.querySelectorAll('#modal-capturados .captura__check:checked');
+  return [...marcadas].map((casilla) => Number(casilla.dataset.id));
+}
+
+// Desmarca todas las casillas (después de guardar la selección).
+function limpiarSeleccion() {
+  document.querySelectorAll('#modal-capturados .captura__check:checked')
+    .forEach((casilla) => { casilla.checked = false; });
+}
+
+// Muestra un mensaje en el pie del diálogo "Pokémon capturados".
+function avisar(mensaje) {
+  const aviso = document.querySelector('#modal-capturados .modal__aviso');
+  if (aviso) aviso.textContent = mensaje;
+}
+
 pintarCapturados();
 pintarFavoritos();
 pintarEquipo();
+
+const botonFavorito = document.querySelector('#boton-marcar-favorito');
+if (botonFavorito) {
+  botonFavorito.addEventListener('click', () => {
+    const ids = idsSeleccionados();
+    if (ids.length === 0) {
+      avisar('Primero seleccioná al menos un Pokémon.');
+      return;
+    }
+    const nuevos = agregarFavoritos(ids);   // guarda en localStorage
+    limpiarSeleccion();
+    pintarFavoritos();
+    avisar(nuevos.length === 0
+      ? 'Esos Pokémon ya estaban en favoritos.'
+      : `${nuevos.length} Pokémon agregado(s) a favoritos.`);
+  });
+}
+
+const botonEquipo = document.querySelector('#boton-agregar-equipo');
+if (botonEquipo) {
+  botonEquipo.addEventListener('click', () => {
+    const ids = idsSeleccionados();
+    if (ids.length === 0) {
+      avisar('Primero seleccioná al menos un Pokémon.');
+      return;
+    }
+    const { agregados, sinEspacio } = agregarAlEquipo(ids);   // respeta el máximo de 6
+    limpiarSeleccion();
+    pintarEquipo();
+    if (sinEspacio.length > 0) {
+      avisar(`El equipo admite máximo ${MAX_EQUIPO}: ${agregados.length} agregado(s), ${sinEspacio.length} no cupieron.`);
+    } else if (agregados.length === 0) {
+      avisar('Esos Pokémon ya estaban en el equipo.');
+    } else {
+      avisar(`${agregados.length} Pokémon agregado(s) al equipo.`);
+    }
+  });
+}

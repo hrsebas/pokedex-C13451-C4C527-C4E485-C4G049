@@ -520,6 +520,13 @@ body:has(dialog[open]) {
   color: var(--tinta-suave);
 }
 
+.modal__aviso {
+  margin: 0;
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--tinta-suave);
+}
+
 .modal__pie {
   flex: none;
   display: flex;
