@@ -612,6 +612,17 @@ body:has(dialog[open]) {
   font-size: .75rem;
 }
 
+/* Mensaje de lista vacía (Equipo y Favoritos). Ocupa toda la fila de la
+   grilla y se ve como la caja de Capturados cuando no hay ninguno. */
+.modal__vacio {
+  grid-column: 1 / -1;
+  padding: 1rem 1.25rem;
+  color: var(--tinta-suave);
+  background: var(--blanco);
+  border: 2px solid #DCE5F0;
+  border-radius: var(--radio-lg);
+}
+
 
 /* --------------------------------------------------------------------------
    6. Equipo
