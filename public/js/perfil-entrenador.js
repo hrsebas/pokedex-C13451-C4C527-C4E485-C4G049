@@ -18,20 +18,7 @@ function pintarCapturados() {
     .sort((a, b) => a.id - b.id);
 
   // 1) Resumen de la tarjeta de sección: el número y los mini-sprites
-  const detalle = document.querySelector('.seccion--capturados .seccion__detalle');
-  if (detalle) {
-    detalle.textContent = `${capturados.length} Pokémon en tu colección`;
-  }
-
-  const mini = document.querySelector('.seccion--capturados .mini-sprites');
-  if (mini) {
-    const primeros = capturados.slice(0, 3)
-      .map((p) => `<li><img src="assets/${p.slug}.png" alt="" width="34" height="34"></li>`)
-      .join('');
-    const resto = capturados.length > 3
-      ? `<li class="mini-sprites__mas">+${capturados.length - 3}</li>` : '';
-    mini.innerHTML = primeros + resto;
-  }
+  pintarResumen('capturados', capturados, `${capturados.length} Pokémon en tu colección`);
 
   // 2) Grilla dentro del diálogo "Pokémon capturados"
   const grilla = document.querySelector('#modal-capturados .capturados');
@@ -55,7 +42,7 @@ function pintarCapturados() {
 }
 
 // -------------------------------------------------------------
-//  Piezas compartidas por Favoritos y Equipo
+//  Piezas compartidas por Capturados, Favoritos y Equipo
 // -------------------------------------------------------------
 
 // De los ids guardados a fichas completas (descarta ids raros), en orden de Pokédex
@@ -84,7 +71,9 @@ function icono(nombre, clase = '') {
   return `<svg class="icono ${clase}" aria-hidden="true" width="24" height="24"><use href="#i-${nombre}"/></svg>`;
 }
 
-// Tarjeta de sección del perfil: el texto de resumen y los mini-sprites
+// Tarjeta de sección del perfil: el texto de resumen y los mini-sprites.
+// Van en <span> (no <ul>/<li>) porque la tarjeta es un <button>, y dentro
+// de un botón el HTML solo permite contenido de frase (lo exige el W3C).
 function pintarResumen(seccion, pokemones, texto) {
   const detalle = document.querySelector(`.seccion--${seccion} .seccion__detalle`);
   if (detalle) detalle.textContent = texto;
@@ -92,10 +81,10 @@ function pintarResumen(seccion, pokemones, texto) {
   const mini = document.querySelector(`.seccion--${seccion} .mini-sprites`);
   if (mini) {
     const primeros = pokemones.slice(0, 3)
-      .map((p) => `<li><img src="assets/${p.slug}.png" alt="" width="34" height="34"></li>`)
+      .map((p) => `<span><img src="assets/${p.slug}.png" alt="" width="34" height="34"></span>`)
       .join('');
     const resto = pokemones.length > 3
-      ? `<li class="mini-sprites__mas">+${pokemones.length - 3}</li>` : '';
+      ? `<span class="mini-sprites__mas">+${pokemones.length - 3}</span>` : '';
     mini.innerHTML = primeros + resto;
   }
 }

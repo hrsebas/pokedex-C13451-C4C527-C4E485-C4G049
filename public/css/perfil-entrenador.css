@@ -285,15 +285,14 @@
   background: var(--amarillo);
 }
 
-/* Los mini-sprites se solapan un poco, como un abanico de fichas. */
+/* Los mini-sprites se solapan un poco, como un abanico de fichas.
+   Son <span> y no una lista porque viven dentro de un <button>. */
 .mini-sprites {
   display: flex;
   margin: .4rem 0 0;
-  padding: 0;
-  list-style: none;
 }
 
-.mini-sprites li {
+.mini-sprites > span {
   display: grid;
   place-items: center;
   width: 2.75rem;
@@ -305,7 +304,7 @@
   box-shadow: 0 3px 8px -2px rgba(20, 44, 82, .35);
 }
 
-.mini-sprites li:first-child { margin-left: 0; }
+.mini-sprites > span:first-child { margin-left: 0; }
 
 .mini-sprites img { width: 2.1rem; height: 2.1rem; }
 
