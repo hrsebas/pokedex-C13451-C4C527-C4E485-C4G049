@@ -38,7 +38,7 @@ function pintarCapturados() {
     } else {
       grilla.innerHTML = capturados.map((p) => `
         <li class="captura">
-          <input type="checkbox" class="captura__check" id="cap-${p.id}" aria-label="Seleccionar a ${p.nombre}">
+          <input type="checkbox" class="captura__check" id="cap-${p.id}" data-id="${p.id}" aria-label="Seleccionar a ${p.nombre}">
           <label class="captura__cuerpo" for="cap-${p.id}">
             <span class="sprite-zona"><img src="assets/${p.slug}.png" alt="" width="96" height="96"></span>
             <span class="numero">${numeroPokedex(p.id)}</span>
@@ -51,4 +51,40 @@ function pintarCapturados() {
   }
 }
 
+// Devuelve los ids de los Pokémon marcados en el diálogo "Pokémon capturados".
+function idsSeleccionados() {
+  const marcadas = document.querySelectorAll('#modal-capturados .captura__check:checked');
+  return [...marcadas].map((casilla) => Number(casilla.dataset.id));
+}
+
+// Muestra un mensaje en el pie del diálogo "Pokémon capturados".
+function avisar(mensaje) {
+  const aviso = document.querySelector('#modal-capturados .modal__aviso');
+  if (aviso) aviso.textContent = mensaje;
+}
+
 pintarCapturados();
+
+const botonFavorito = document.querySelector('#boton-marcar-favorito');
+if (botonFavorito) {
+  botonFavorito.addEventListener('click', () => {
+    const ids = idsSeleccionados();
+    if (ids.length === 0) {
+      avisar('Primero seleccioná al menos un Pokémon.');
+      return;
+    }
+    avisar(`${ids.length} seleccionado(s) para favoritos.`);
+  });
+}
+
+const botonEquipo = document.querySelector('#boton-agregar-equipo');
+if (botonEquipo) {
+  botonEquipo.addEventListener('click', () => {
+    const ids = idsSeleccionados();
+    if (ids.length === 0) {
+      avisar('Primero seleccione al menos un Pokémon.');
+      return;
+    }
+    avisar(`${ids.length} seleccionado(s) para el equipo.`);
+  });
+}
